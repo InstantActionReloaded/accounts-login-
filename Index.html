@@ -1,8 +1,8 @@
-    
+
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Vipid - Login</title>
+  <title>Vipid - Video Intro Maker - Choose Intro Design</title>
   <!--[if lte IE 7]><script src="/site_media/static/js/ie6/warning.js"></script><script>window.onload=function(){e("/site_media/static/js/ie6/")}</script><![endif]-->
 
   <link rel="stylesheet" type="text/css" media="screen" href="/site_media/static/skins/default/video_scrollbar.css">
@@ -580,203 +580,1382 @@ function displayCount() {
   	
 
   
+<link rel="stylesheet" type="text/css" media="screen" href="/site_media/static/skins/default/isotope.css">
 <style type="text/css">
-#polygon {
-background: url(/site_media/static/skins/default/polygon.png) no-repeat;
-width: 570px;
-height: 136px;
-margin: 0 auto;
-}
-#polygon a {
-margin-top: 64px;
-}
+/*@-moz-document url-prefix() {
+    #vipid-info {
+        margin-top: 0;
+    }}*/
 
-#connect-fb, #connect-twitter, #connect-google {
-display: block;
-margin-left: 23px;
-width: 160px;
-height: 37px;
-float: left;
+.vipid-thumb {
+    float: left;
+    width: 314px;
+    height: 204px;
+    padding: 0;
+    margin: 10px 0px 10px 5px;
 }
 
-#connect-fb {
-background: url(/site_media/static/skins/default/connect_fb_small.png) no-repeat;
+#header-lnav li.themes a {
+    color: #ffcc00;
 }
 
-#connect-twitter {
-background: url(/site_media/static/skins/default/connect_twitter_small.png) no-repeat;
+#vipid-thumbs {
+    margin-left: -3px;
+    padding-bottom: 10px;
 }
 
-#connect-google {
-background: url(/site_media/static/skins/default/connect_google_small.png) no-repeat;
+.sample-thumb {
+    float: left;
+    width: 298px;
+    height: 198px;
+    margin-right: 10px;
+    margin-left: 10px;
+    background: url(/site_media/static/skins/default/thumb-bg-select.png) no-repeat;
+    -moz-box-shadow:    1px 1px 7px #000;
+    -webkit-box-shadow: 1px 1px 7px #000;
+    box-shadow:         1px 1px 7px #000;
+    cursor:pointer;
+} 
+
+.sample-thumb img {
+    padding-left: 4px;
+    padding-top: 4px;
 }
 
-#regbutton {
-height: 44px;
-margin-top: 20px;
-float: right;
-margin-right: 50px;
-font-family: 'myriad_probold';
-font-size: 24px;
-line-height: 40px;
-padding-left: 20px;
-padding-right: 20px;
+.duration {
+    float: right;
+    display: block;
+    color: #6f6f6f;
+    font-family: "FuturaMedium", sans-serif;
+    font-size: 12px;
+    margin-top: 6px;
+    margin-right: 10px;
+    -moz-text-shadow:    1px 0px 1px #000;
+    -webkit-text-shadow: 1px 0px 1px #000;
+    text-shadow:         1px 0px 1px #000;
 }
 
-#signin-vipid {
-width: 308px;
-height: 54px;
-margin: 60px auto 10px auto;
-background: url(/site_media/static/skins/default/signin-vipid.png) no-repeat;
+.vipid-title {
+    font-size: 19px;
+    color: #f0f0f0;
+    font-family: "BebasNeueRegular";
+    letter-spacing: 1px;
+    margin: 0;
+    padding: 0;
+    margin-left: 4px;
+    line-height: 1.4;
 }
 
-#signin-boomshot {
-width: 432px;
-height: 60px;
-margin: 60px auto 10px auto;
-background: url(/site_media/static/skins/default/signin-boomshot.png) no-repeat;
+#offer {
+    position: relative;
+    margin-left: 0;
+    margin-bottom: 8px;
+    width: 960px;
+    height: 161px;
 }
 
-#register-form {
-width: 522px;
-background: rgba(0,0,0,0.4);
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    border-radius: 5px;
-    -webkit-box-shadow: inset 0px 0px 5px rgba(0,0,0,0.4);
-    -moz-box-shadow: inset 0px 0px 5px rgba(0,0,0,0.4);
-    box-shadow:  inset 0px 0px 5px  rgba(0,0,0,0.4);
-margin: 19px auto 0 auto;
-padding-left: 48px;
-padding-top: 24px;
-padding-bottom: 20px;
+#linkmore {
+    position: absolute;
+    font-size: 12px;
+    bottom: 4px;
+    right: 6px;
+    color: #db3621;
+    text-decoration: underline;
 }
 
-#register-form {
-font-family:  'Myriad Pro', Helvetica, Arial, sans-serif;
-font-size: 18px;
+#template-details {
+    position: absolute;
+     width: 940px;
+    height: 540px;
+    z-index: 9999;
+    visibility: hidden;
+    background: transparent;
 }
 
-#already {
-font-family:  'Myriad Pro Semibold', Helvetica, Arial, sans-serif;
-font-size: 18px;
-text-align: center;
-margin-top: 24px;
-margin-bottom: 80px;
+#template-details-top p{
+    font-family: "BebasRegular";
+    font-size: 24px;
+    margin-bottom: 12px;
+    -moz-tex-shadow:    1px 1px 1px #000;
+    -webkit-tex-shadow: 1px 1px  1px #000;
+    tex-shadow:         1px 1px  1px #000;
 }
 
-
-
-#already a{
-font-family:  'Myriad Pro Semibold', Helvetica, Arial, sans-serif;
-font-size: 18px;
-text-decoration: underline;
-color: #dbd22e;
+#template-details-inner {
+    height: 386px;
+    width: 940px;
+    background: #999 url("/site_media/static/skins/default/bg_tile_256.png");
+    -webkit-box-shadow: 5px 0 46px rgba(0,0,0,.75);
+    -moz-box-shadow: 5px 0 46px rgba(0,0,0,.75);
+    box-shadow: 5px 0 46px rgba(0,0,0,.75);
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    border: 1px solid #4e4e4e;
 }
 
-#fpasswd {
-font-family:  'Myriad Pro Semibold', Helvetica, Arial, sans-serif;
-font-size: 18px;
-text-decoration: underline;
-color: #dbd22e;
-float: left;
-margin-top: 30px;
+#template-details-player-holder{
+    background: #000;
+    width: 640px;
+    height: 360px;
+    float: left;
+    margin-top: 13px;
+    margin-left: 13px;
+    -webkit-box-shadow: 0 0 10px rgba(0,0,0,.75);
+    -moz-box-shadow: 0 0 10px rgba(0,0,0,.75);
+    box-shadow: 0 0 10px rgba(0,0,0,.75);
 }
 
-#whatsfor {
-font-family:  'Myriad Pro', Helvetica, Arial, sans-serif;
-font-size: 24px;
-text-align: center;
+#template-details-info-holder{
+    width: 280px;
+    height: 370px;
+    float: right;
 }
 
-#vipidis {
-font-family:  'Myriad Pro', Helvetica, Arial, sans-serif;
-font-size: 14px;
-text-align: center;
-width: 550px;
-margin: 0 auto;
-color: #717171;
-margin-top: 20px;
-margin-bottom: 20px;
+.photo-icon {
+    float: right;
+    width: 24px;
+    height: 20px;
+    margin-right: 6px;
+    margin-top: 3px;
+    background: url(/site_media/static/skins/default/photo-icon.png) no-repeat;
 }
 
-
-form p {
-font-family:  'Myriad Pro', Helvetica, Arial, sans-serif;
-font-size: 16px;
-color: #818181;
-margin: 8px 0 6px 6px;
+#details-link {
 }
 
-form input[type=text], form input[type=password] { 
-font-family:  'Myriad Pro', Helvetica, Arial, sans-serif;
-height: 45px;
-width: 467px;
-border-radius: 5px;
-border-left: 1px solid #212121;
-border-right: 1px solid #1e1e1e;
-border-bottom: 1px solid #343434;
-border-top: 1px solid #000;
-color: #fff;
-font-size: 24px;
-background: #070707;
--moz-box-shadow:    0 1px 0 rgba(255, 255, 255, 0.15);
--webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.15);
-box-shadow:         0 1px 0 rgba(255, 255, 255, 0.15);
+#details-link div {
+    width: 255px;
+    height: 44px;
+    margin: 0 auto;
+    background: url("/site_media/static/skins/default/create-link.png") no-repeat;
 }
 
-form input.faulty {
-color: #FF4040;
-font-style: italic;
+#template-details-info{
+    height: 290px;
+    margin: 20px;
 }
 
-#terms {
-font-family:  'Myriad Pro, Helvetica, Arial, sans-serif;
-font-size: 12px;
-color: #d3dadc;
-margin-top: 30px;
+#template-details-info dl{
+    font-family: "FuturaMedium", sans-serif;
+    font-size: 14px;
+    color: #e7e7e7;
+    -moz-text-shadow:    1px 0px 1px #000;
+    -webkit-text-shadow: 1px 0px 1px #000;
+    text-shadow:         1px 0px 1px #000;
 }
 
-.errorlist {
-font-size: 14px;
-color: #ff6666;
-margin-top: 6px;
-margin-left: 2px;
+#template-details-info dl dt, #template-details-info dl dd {
+    margin-bottom: 10px;
 }
 
-#terms input {
-margin-left: -6px;
+#template-details-info dl dt {
+    float: left;
 }
 
-#terms a{
-font-family:  'Myriad Pro', Helvetica, Arial, sans-serif;
-font-size: 14px;
-text-decoration: underline;
-color: #dbd22e;
+#created {
+    font-family: "FuturaMedium", sans-serif;
+    font-size: 12px;
+    color: #b6b6b6;
+    -moz-text-shadow:    1px 0px 1px #000;
+    -webkit-text-shadow: 1px 0px 1px #000;
+    text-shadow:         1px 0px 1px #000;
+    float: right;
+    margin-top: -10px;
+    margin-rigth: 4px;
 }
 
-
-input[type=image] {
-float: right;
-margin-right: 50px;
-margin-top: 18px;
+#customize {
+    font-family: "FuturaMedium", sans-serif;
+    font-size: 14px;
+    color: #e7e7e7;
+    -moz-text-shadow:    1px 0px 1px #000;
+    -webkit-text-shadow: 1px 0px 1px #000;
+    text-shadow:         1px 0px 1px #000;
 }
 
+#customize p{
+    float: left;
+}
 
+#customize img {
+    margin: 0 10px 0 10px;
+}
+
+#info-short {
+    font-family: "FuturaMedium", sans-serif;
+    font-size: 14px;
+    font-style: italic;
+    color: #e7e7e7;
+    margin-bottom: 18px;
+    -moz-text-shadow:    1px 0px 1px #000;
+    -webkit-text-shadow: 1px 0px 1px #000;
+    text-shadow:         1px 0px 1px #000;
+}
+
+#template-details-info h3{
+    color: #181818;
+}
+
+#hdivisor {
+    height: 1px;
+    background: #1f1f1f;
+    border-top: 1px solid #1a1a1a;
+    border-bottom: 1px solid #434343;
+    margin-left: 14px;
+    margin-right: 14px;
+    display:none;
+}
+
+#related-block {
+    height: 100px;
+    margin-left: 14px;
+}
+
+#related-block p {
+    font-family: "Futura";
+    font-size: 17px;
+    color: #d8d8d8;
+    margin-top: 4px;
+}
+
+.related-thumb {
+    float: left;
+    margin-right: 9px;
+    margin-top: 5px;
+    height: 75px;
+    width: 133px;
+    border: 1px solid transparent;
+}
+
+.related-thumb:hover {
+    border: 1px solid #f2c202;
+}
+
+#temlate-details-close{
+    float: right;
+    width: 40px;
+    height: 40px;
+    background: url("/site_media/static/skins/default/close_40.png") no-repeat;
+    cursor: pointer;
+    margin-right: -20px;
+    margin-top: -18px;
+}
+
+#overlay {
+    background-color: rgba(31,31,31, 0.95);
+}
 </style>
-<script type="text/javascript">
 
-$(function() {
-$(".faulty").click(function(){
-$(this).val('');
-$(this).removeClass('faulty');
-var name = $(this).attr("name");
-if (name=="password1" || name=="password2") {
-var pass_inp = $("<input/>",{type:"password", "name":name});
-$(this).replaceWith(pass_inp);
-pass_inp.focus();
-}
-});
+<script type="text/javascript" src="/site_media/static/player/jwplayer.js"></script>
+<script type="text/javascript" src="/site_media/static/js/vipid_functions.js"></script>
+<script type="text/javascript" src="/site_media/static/js/jquery.tools.min.js"></script>
+<script type="text/javascript" src="/site_media/static/js/jquery.isotope.js"></script>
+<script type="text/javascript">
+var example_movies = {"7": "http://d3stzszue4x9wz.cloudfront.net/content/6459__uid/173138_pixar/173138_pixar_sd.mp4", "8": "http://d3stzszue4x9wz.cloudfront.net/content/2__uid/298933_universal/298933_universal_sd.mp4", "9": "http://d3stzszue4x9wz.cloudfront.net/content/3_deep/1502_halloween/1502_halloween.mp4", "10": "http://d3stzszue4x9wz.cloudfront.net/content/6459__uid/173163_homewood/173163_homewood_sd.mp4", "11": "http://d3stzszue4x9wz.cloudfront.net/content/6459__uid/173153_abstract_01/173153_abstract_01_sd.mp4", "12": "http://d3stzszue4x9wz.cloudfront.net/content/6459__uid/173162_4g_style/173162_4g_style_sd.mp4", "13": "http://d3stzszue4x9wz.cloudfront.net/content/6459__uid/173145_glamurama/173145_glamurama_sd.mp4", "14": "http://d3stzszue4x9wz.cloudfront.net/content/6459__uid/173154_cats/173154_cats_sd.mp4", "15": "http://d3stzszue4x9wz.cloudfront.net/content/2__uid/947912_you_tube_id/947912_you_tube_id_sd.mp4", "16": "http://d3stzszue4x9wz.cloudfront.net/content/6459__uid/173152_facebook_id/173152_facebook_id_sd.mp4", "17": "http://d3stzszue4x9wz.cloudfront.net/content/3_deep/1503_halloween_stereo/1503_halloween_stereo.mp4", "18": "http://d3stzszue4x9wz.cloudfront.net/content/6459__uid/173160_suspense/173160_suspense_sd.mp4", "19": "http://d3stzszue4x9wz.cloudfront.net/content/6459__uid/173155_christmas/173155_christmas_sd.mp4", "20": "http://d3stzszue4x9wz.cloudfront.net/content/6459__uid/173157_countrychristmas/173157_countrychristmas_sd.mp4", "21": "http://d3stzszue4x9wz.cloudfront.net/content/6459__uid/173148_warnerbros/173148_warnerbros_sd.mp4", "22": "http://d3stzszue4x9wz.cloudfront.net/content/3_deep/1812_lucasfilm/1812_lucasfilm.mp4", "23": "http://d3stzszue4x9wz.cloudfront.net/content/6459__uid/173158_lionsgate/173158_lionsgate_sd.mp4", "24": "http://d3stzszue4x9wz.cloudfront.net/content/6459__uid/173164_romantic_titles/173164_romantic_titles_sd.mp4", "25": "http://d3stzszue4x9wz.cloudfront.net/content/2__uid/945470_star_text/945470_star_text_sd.mp4", "28": "http://d3stzszue4x9wz.cloudfront.net/content/6459__uid/173161_epic_titles/173161_epic_titles_sd.mp4", "30": "http://d3stzszue4x9wz.cloudfront.net/content/6459__uid/173159_build_up/173159_build_up_sd.mp4", "35": "http://d3stzszue4x9wz.cloudfront.net/content/6__uid/173178_warnerbros_image/173178_warnerbros_image_sd.mp4", "36": "http://d3stzszue4x9wz.cloudfront.net/content/6__uid/173174_4g_style_tv/173174_4g_style_tv.mp4", "39": "http://d3stzszue4x9wz.cloudfront.net/content/6__uid/173177_romantic_titles2/173177_romantic_titles2_sd.mp4", "40": "http://d3stzszue4x9wz.cloudfront.net/content/6__uid/173182_epic_titles2/173182_epic_titles2_sd.mp4", "41": "http://d3stzszue4x9wz.cloudfront.net/content/6459__uid/172496_disney_classic/172496_disney_classic_sd.mp4", "42": "http://d3stzszue4x9wz.cloudfront.net/content/3__uid/173185_product_promo/173185_product_promo_sd.mp4", "52": "http://d3stzszue4x9wz.cloudfront.net/content/2__uid/173184_scary_intro_1/173184_scary_intro_1_sd.mp4", "53": "http://d3stzszue4x9wz.cloudfront.net/content/6459__uid/194170_universal_moon/194170_universal_moon_sd.mp4", "54": "http://d3stzszue4x9wz.cloudfront.net/content/2__uid/218234_universal_sun/218234_universal_sun_sd.mp4", "55": "http://d3stzszue4x9wz.cloudfront.net/content/2__uid/262905_football_pro/262905_football_pro_sd.mp4", "56": "http://d3stzszue4x9wz.cloudfront.net/content/2__uid/265299_columbia_mdl/265299_columbia_mdl_sd.mp4", "57": "http://d3stzszue4x9wz.cloudfront.net/content/2__uid/281880_focus/281880_focus_sd.mp4", "58": "http://d3stzszue4x9wz.cloudfront.net/content/2__uid/331000_castlerock/331000_castlerock.mp4", "59": "http://d3stzszue4x9wz.cloudfront.net/content/2__uid/362175_mgm/362175_mgm_sd_processed_0_sd.mp4", "60": "http://d3stzszue4x9wz.cloudfront.net/content/2__uid/642285_spyglass/642285_spyglass_sd.mp4", "61": "http://d3stzszue4x9wz.cloudfront.net/vipid_examples/932970_skydance.mp4", "62": "http://d3stzszue4x9wz.cloudfront.net/content/2__uid/950469_comics/950469_comics_sd.mp4", "63": "http://d3stzszue4x9wz.cloudfront.net/content/2__uid/956926_glassball/956926_glassball_sd.mp4"};
+var example_movies_hd = {"7": "http://d3stzszue4x9wz.cloudfront.net/content/6459__uid/173138_pixar/173138_pixar.mp4", "8": "http://d3stzszue4x9wz.cloudfront.net/content/2__uid/298933_universal/298933_universal.mp4", "10": "http://d3stzszue4x9wz.cloudfront.net/content/6459__uid/173163_homewood/173163_homewood.mp4", "11": "http://d3stzszue4x9wz.cloudfront.net/content/6459__uid/173153_abstract_01/173153_abstract_01.mp4", "12": "http://d3stzszue4x9wz.cloudfront.net/content/6459__uid/173162_4g_style/173162_4g_style.mp4", "13": "http://d3stzszue4x9wz.cloudfront.net/content/6459__uid/173145_glamurama/173145_glamurama.mp4", "14": "http://d3stzszue4x9wz.cloudfront.net/content/6459__uid/173154_cats/173154_cats.mp4", "15": "http://d3stzszue4x9wz.cloudfront.net/content/2__uid/947912_you_tube_id/947912_you_tube_id.mp4", "16": "http://d3stzszue4x9wz.cloudfront.net/content/6459__uid/173152_facebook_id/173152_facebook_id.mp4", "18": "http://d3stzszue4x9wz.cloudfront.net/content/6459__uid/173160_suspense/173160_suspense.mp4", "19": "http://d3stzszue4x9wz.cloudfront.net/content/6459__uid/173155_christmas/173155_christmas.mp4", "20": "http://d3stzszue4x9wz.cloudfront.net/content/6459__uid/173157_countrychristmas/173157_countrychristmas.mp4", "21": "http://d3stzszue4x9wz.cloudfront.net/content/6459__uid/173148_warnerbros/173148_warnerbros.mp4", "23": "http://d3stzszue4x9wz.cloudfront.net/content/6459__uid/173158_lionsgate/173158_lionsgate.mp4", "24": "http://d3stzszue4x9wz.cloudfront.net/content/6459__uid/173164_romantic_titles/173164_romantic_titles.mp4", "25": "http://d3stzszue4x9wz.cloudfront.net/content/2__uid/945470_star_text/945470_star_text.mp4", "28": "http://d3stzszue4x9wz.cloudfront.net/content/6459__uid/173161_epic_titles/173161_epic_titles.mp4", "30": "http://d3stzszue4x9wz.cloudfront.net/content/6459__uid/173159_build_up/173159_build_up.mp4", "35": "http://d3stzszue4x9wz.cloudfront.net/content/6__uid/173178_warnerbros_image/173178_warnerbros_image.mp4", "39": "http://d3stzszue4x9wz.cloudfront.net/content/6__uid/173177_romantic_titles2/173177_romantic_titles2.mp4", "40": "http://d3stzszue4x9wz.cloudfront.net/content/6__uid/173182_epic_titles2/173182_epic_titles2.mp4", "41": "http://d3stzszue4x9wz.cloudfront.net/content/6459__uid/172496_disney_classic/172496_disney_classic.mp4", "42": "http://d3stzszue4x9wz.cloudfront.net/content/3__uid/173185_product_promo/173185_product_promo.mp4", "52": "http://d3stzszue4x9wz.cloudfront.net/content/2__uid/173184_scary_intro_1/173184_scary_intro_1.mp4", "53": "http://d3stzszue4x9wz.cloudfront.net/content/6459__uid/194170_universal_moon/194170_universal_moon.mp4", "54": "http://d3stzszue4x9wz.cloudfront.net/content/2__uid/218234_universal_sun/218234_universal_sun.mp4", "55": "http://d3stzszue4x9wz.cloudfront.net/content/2__uid/262905_football_pro/262905_football_pro.mp4", "56": "http://d3stzszue4x9wz.cloudfront.net/content/2__uid/265299_columbia_mdl/265299_columbia_mdl.mp4", "57": "http://d3stzszue4x9wz.cloudfront.net/content/2__uid/281880_focus/281880_focus.mp4", "59": "http://d3stzszue4x9wz.cloudfront.net/content/2__uid/362175_mgm/362175_mgm_sd_processed_0.mp4", "60": "http://d3stzszue4x9wz.cloudfront.net/content/2__uid/642285_spyglass/642285_spyglass.mp4", "62": "http://d3stzszue4x9wz.cloudfront.net/content/2__uid/950469_comics/950469_comics.mp4", "63": "http://d3stzszue4x9wz.cloudfront.net/content/2__uid/956926_glassball/956926_glassball.mp4"};
+var current_template = "";
+
+var videos = {
+
+63:{'image':'http://ivipid.com/site_media/content/templates/vipids/63/example_image_1.png.640x360_q90.jpg',
+                 'href': '/customize/glassball/',
+                 'id': '63',
+                 'boom_href': '/project/create/glassball/',
+                 'disclaimer_href': '',
+                 'info': '',
+                 'title': 'Glass Ball',
+                 'disclaimer':'',
+                 'disclaimer_href':'/disclaimer/63/?redirect=true',
+//                 'disclaimer_mandatory':false,
+                 'disclaimer_mandatory':false,
+                 'timestamp': '20151207',
+                 'date': '12 07, 2015',
+                 'produced_paid': 38,
+                 'length': '22',
+                 'fps': '25',
+                 'related': [],
+                 'related_thumb': 'http://ivipid.com/site_media/content/templates/vipids/63/example_image_1.png.133x75_q95.jpg',
+                 'background': '#080808',
+                 'baseprice': 200,
+                 'customizations': [{"amount": 2, "type": "string", "name": "text fields"}, {"amount": 1, "type": "choice", "name": "choice field"}],
+                 'file': 'http://d3stzszue4x9wz.cloudfront.net/content/2__uid/956926_glassball/956926_glassball_sd.mp4'
+                },
+
+62:{'image':'http://ivipid.com/site_media/content/templates/vipids/None/example_image_23.jpg.640x360_q90.jpg',
+                 'href': '/customize/comics/',
+                 'id': '62',
+                 'boom_href': '/project/create/comics/',
+                 'disclaimer_href': '',
+                 'info': 'Listen to your favourite pages shuffling with your own pictures in it.',
+                 'title': 'Comics',
+                 'disclaimer':'',
+                 'disclaimer_href':'/disclaimer/62/?redirect=true',
+//                 'disclaimer_mandatory':false,
+                 'disclaimer_mandatory':false,
+                 'timestamp': '20150915',
+                 'date': '09 15, 2015',
+                 'produced_paid': 37,
+                 'length': '14',
+                 'fps': '25',
+                 'related': [],
+                 'related_thumb': 'http://ivipid.com/site_media/content/templates/vipids/None/example_image_23.jpg.133x75_q95.jpg',
+                 'background': '#080808',
+                 'baseprice': 200,
+                 'customizations': [{"amount": 8, "type": "image", "name": "images"}, {"amount": 2, "type": "string", "name": "text fields"}],
+                 'file': 'http://d3stzszue4x9wz.cloudfront.net/content/2__uid/950469_comics/950469_comics_sd.mp4'
+                },
+
+61:{'image':'http://ivipid.com/site_media/content/templates/vipids/61/example_image_2.jpg.640x360_q90.jpg',
+                 'href': '/customize/skydance/',
+                 'id': '61',
+                 'boom_href': '/project/create/skydance/',
+                 'disclaimer_href': '',
+                 'info': 'Do not touch, it’s hot!',
+                 'title': 'Sunshine',
+                 'disclaimer':'',
+                 'disclaimer_href':'/disclaimer/61/?redirect=true',
+//                 'disclaimer_mandatory':false,
+                 'disclaimer_mandatory':false,
+                 'timestamp': '20141019',
+                 'date': '10 19, 2014',
+                 'produced_paid': 36,
+                 'length': '21',
+                 'fps': '25',
+                 'related': [],
+                 'related_thumb': 'http://ivipid.com/site_media/content/templates/vipids/61/example_image_2.jpg.133x75_q95.jpg',
+                 'background': '#080808',
+                 'baseprice': 200,
+                 'customizations': [{"amount": 2, "type": "string", "name": "text fields"}],
+                 'file': 'http://d3stzszue4x9wz.cloudfront.net/vipid_examples/932970_skydance.mp4'
+                },
+
+8:{'image':'http://ivipid.com/site_media/content/templates/vipids/8/example_image_3.jpg.640x360_q90.jpg',
+                 'href': '/customize/globe/',
+                 'id': '8',
+                 'boom_href': '/project/create/globe/',
+                 'disclaimer_href': '',
+                 'info': 'Watch the planet Earth spin revealing your own text.',
+                 'title': 'The Globe',
+                 'disclaimer':'',
+                 'disclaimer_href':'/disclaimer/8/?redirect=true',
+//                 'disclaimer_mandatory':false,
+                 'disclaimer_mandatory':false,
+                 'timestamp': '20120311',
+                 'date': '03 11, 2012',
+                 'produced_paid': 35,
+                 'length': '22',
+                 'fps': '25',
+                 'related': [54, 53],
+                 'related_thumb': 'http://ivipid.com/site_media/content/templates/vipids/8/example_image_3.jpg.133x75_q95.jpg',
+                 'background': '#',
+                 'baseprice': 0,
+                 'customizations': [{"amount": 2, "type": "string", "name": "text fields"}, {"amount": 1, "type": "choice", "name": "choice field"}],
+                 'file': 'http://d3stzszue4x9wz.cloudfront.net/content/2__uid/298933_universal/298933_universal_sd.mp4'
+                },
+
+7:{'image':'http://ivipid.com/site_media/content/templates/vipids/7/example_image_3.jpg.640x360_q90.jpg',
+                 'href': '/customize/lamp/',
+                 'id': '7',
+                 'boom_href': '/project/create/lamp/',
+                 'disclaimer_href': '',
+                 'info': 'Do we even need to explain that theme ?',
+                 'title': 'Jumping Lamp',
+                 'disclaimer':'',
+                 'disclaimer_href':'/disclaimer/7/?redirect=true',
+//                 'disclaimer_mandatory':false,
+                 'disclaimer_mandatory':false,
+                 'timestamp': '20120311',
+                 'date': '03 11, 2012',
+                 'produced_paid': 34,
+                 'length': '14',
+                 'fps': '25',
+                 'related': [],
+                 'related_thumb': 'http://ivipid.com/site_media/content/templates/vipids/7/example_image_3.jpg.133x75_q95.jpg',
+                 'background': '#a2c0f4',
+                 'baseprice': 0,
+                 'customizations': [{"amount": 2, "type": "string", "name": "text fields"}],
+                 'file': 'http://d3stzszue4x9wz.cloudfront.net/content/6459__uid/173138_pixar/173138_pixar_sd.mp4'
+                },
+
+25:{'image':'http://ivipid.com/site_media/content/templates/vipids/25/example_image_3.jpg.640x360_q90.jpg',
+                 'href': '/customize/star_text/',
+                 'id': '25',
+                 'boom_href': '/project/create/star_text/',
+                 'disclaimer_href': '',
+                 'info': 'Jedi would approve your choice !',
+                 'title': 'Star Text',
+                 'disclaimer':'/disclaimer/25/',
+                 'disclaimer_href':'/disclaimer/25/?redirect=true',
+//                 'disclaimer_mandatory':false,
+                 'disclaimer_mandatory':false,
+                 'timestamp': '20120311',
+                 'date': '03 11, 2012',
+                 'produced_paid': 33,
+                 'length': '70',
+                 'fps': '25',
+                 'related': [],
+                 'related_thumb': 'http://ivipid.com/site_media/content/templates/vipids/25/example_image_3.jpg.133x75_q95.jpg',
+                 'background': '#',
+                 'baseprice': 0,
+                 'customizations': [{"amount": 6, "type": "string", "name": "text fields"}],
+                 'file': 'http://d3stzszue4x9wz.cloudfront.net/content/2__uid/945470_star_text/945470_star_text_sd.mp4'
+                },
+
+23:{'image':'http://ivipid.com/site_media/content/templates/vipids/23/example_image_1.jpg.640x360_q90.jpg',
+                 'href': '/customize/gears/',
+                 'id': '23',
+                 'boom_href': '/project/create/gears/',
+                 'disclaimer_href': '',
+                 'info': 'Watch beauty of mechanics bring you to your own text.',
+                 'title': 'Gears',
+                 'disclaimer':'/disclaimer/23/',
+                 'disclaimer_href':'/disclaimer/23/?redirect=true',
+//                 'disclaimer_mandatory':false,
+                 'disclaimer_mandatory':false,
+                 'timestamp': '20120311',
+                 'date': '03 11, 2012',
+                 'produced_paid': 32,
+                 'length': '20',
+                 'fps': '25',
+                 'related': [],
+                 'related_thumb': 'http://ivipid.com/site_media/content/templates/vipids/23/example_image_1.jpg.133x75_q95.jpg',
+                 'background': '#',
+                 'baseprice': 0,
+                 'customizations': [{"amount": 3, "type": "string", "name": "text fields"}],
+                 'file': 'http://d3stzszue4x9wz.cloudfront.net/content/6459__uid/173158_lionsgate/173158_lionsgate_sd.mp4'
+                },
+
+15:{'image':'http://ivipid.com/site_media/content/templates/vipids/15/example_image_4.jpg.640x360_q90.jpg',
+                 'href': '/customize/you_tube_id/',
+                 'id': '15',
+                 'boom_href': '/project/create/you_tube_id/',
+                 'disclaimer_href': '',
+                 'info': 'Sure You can Tube !',
+                 'title': 'Your Video',
+                 'disclaimer':'',
+                 'disclaimer_href':'/disclaimer/15/?redirect=true',
+//                 'disclaimer_mandatory':false,
+                 'disclaimer_mandatory':false,
+                 'timestamp': '20120311',
+                 'date': '03 11, 2012',
+                 'produced_paid': 31,
+                 'length': '8',
+                 'fps': '25',
+                 'related': [],
+                 'related_thumb': 'http://ivipid.com/site_media/content/templates/vipids/15/example_image_4.jpg.133x75_q95.jpg',
+                 'background': '#',
+                 'baseprice': 0,
+                 'customizations': [{"amount": 5, "type": "string", "name": "text fields"}, {"amount": 1, "type": "choice", "name": "choice field"}],
+                 'file': 'http://d3stzszue4x9wz.cloudfront.net/content/2__uid/947912_you_tube_id/947912_you_tube_id_sd.mp4'
+                },
+
+41:{'image':'http://ivipid.com/site_media/content/templates/vipids/41/example_image_5.jpg.640x360_q90.jpg',
+                 'href': '/customize/castle/',
+                 'id': '41',
+                 'boom_href': '/project/create/castle/',
+                 'disclaimer_href': '',
+                 'info': 'Fairy castle with your own text.',
+                 'title': 'Blue Cartoon Castle',
+                 'disclaimer':'',
+                 'disclaimer_href':'/disclaimer/41/?redirect=true',
+//                 'disclaimer_mandatory':false,
+                 'disclaimer_mandatory':false,
+                 'timestamp': '20120519',
+                 'date': '05 19, 2012',
+                 'produced_paid': 30,
+                 'length': '13',
+                 'fps': '25',
+                 'related': [],
+                 'related_thumb': 'http://ivipid.com/site_media/content/templates/vipids/41/example_image_5.jpg.133x75_q95.jpg',
+                 'background': '#093e6a',
+                 'baseprice': 0,
+                 'customizations': [{"amount": 2, "type": "string", "name": "text fields"}],
+                 'file': 'http://d3stzszue4x9wz.cloudfront.net/content/6459__uid/172496_disney_classic/172496_disney_classic_sd.mp4'
+                },
+
+21:{'image':'http://ivipid.com/site_media/content/templates/vipids/21/example_image_2.jpg.640x360_q90.jpg',
+                 'href': '/customize/shield/',
+                 'id': '21',
+                 'boom_href': '/project/create/shield/',
+                 'disclaimer_href': '',
+                 'info': 'Shield in the sky intro !',
+                 'title': 'Shield in the sky',
+                 'disclaimer':'',
+                 'disclaimer_href':'/disclaimer/21/?redirect=true',
+//                 'disclaimer_mandatory':false,
+                 'disclaimer_mandatory':false,
+                 'timestamp': '20120311',
+                 'date': '03 11, 2012',
+                 'produced_paid': 29,
+                 'length': '15',
+                 'fps': '25',
+                 'related': [],
+                 'related_thumb': 'http://ivipid.com/site_media/content/templates/vipids/21/example_image_2.jpg.133x75_q95.jpg',
+                 'background': '#0031a1',
+                 'baseprice': 0,
+                 'customizations': [{"amount": 3, "type": "string", "name": "text fields"}],
+                 'file': 'http://d3stzszue4x9wz.cloudfront.net/content/6459__uid/173148_warnerbros/173148_warnerbros_sd.mp4'
+                },
+
+40:{'image':'http://ivipid.com/site_media/content/templates/vipids/40/example_image.jpg.640x360_q90.jpg',
+                 'href': '/customize/epic_titles2/',
+                 'id': '40',
+                 'boom_href': '/project/create/epic_titles2/',
+                 'disclaimer_href': '',
+                 'info': 'Trailer style theme with text and photos.',
+                 'title': 'Epic Smoky Titles II',
+                 'disclaimer':'',
+                 'disclaimer_href':'/disclaimer/40/?redirect=true',
+//                 'disclaimer_mandatory':false,
+                 'disclaimer_mandatory':false,
+                 'timestamp': '20120512',
+                 'date': '05 12, 2012',
+                 'produced_paid': 28,
+                 'length': '24',
+                 'fps': '25',
+                 'related': [],
+                 'related_thumb': 'http://ivipid.com/site_media/content/templates/vipids/40/example_image.jpg.133x75_q95.jpg',
+                 'background': '#',
+                 'baseprice': 0,
+                 'customizations': [{"amount": 4, "type": "image", "name": "images"}, {"amount": 6, "type": "string", "name": "text fields"}],
+                 'file': 'http://d3stzszue4x9wz.cloudfront.net/content/6__uid/173182_epic_titles2/173182_epic_titles2_sd.mp4'
+                },
+
+56:{'image':'http://ivipid.com/site_media/content/templates/vipids/56/example_image.jpg.640x360_q90.jpg',
+                 'href': '/customize/torch/',
+                 'id': '56',
+                 'boom_href': '/project/create/torch/',
+                 'disclaimer_href': '',
+                 'info': 'Goddess lady carrying your text.',
+                 'title': 'Torch Lady',
+                 'disclaimer':'',
+                 'disclaimer_href':'/disclaimer/56/?redirect=true',
+//                 'disclaimer_mandatory':false,
+                 'disclaimer_mandatory':false,
+                 'timestamp': '20120712',
+                 'date': '07 12, 2012',
+                 'produced_paid': 27,
+                 'length': '20',
+                 'fps': '25',
+                 'related': [],
+                 'related_thumb': 'http://ivipid.com/site_media/content/templates/vipids/56/example_image.jpg.133x75_q95.jpg',
+                 'background': '#080808',
+                 'baseprice': 0,
+                 'customizations': [{"amount": 2, "type": "string", "name": "text fields"}],
+                 'file': 'http://d3stzszue4x9wz.cloudfront.net/content/2__uid/265299_columbia_mdl/265299_columbia_mdl_sd.mp4'
+                },
+
+58:{'image':'http://ivipid.com/site_media/content/templates/vipids/58/example_image.jpg.640x360_q90.jpg',
+                 'href': '/customize/lighthouse/',
+                 'id': '58',
+                 'boom_href': '/project/create/lighthouse/',
+                 'disclaimer_href': '',
+                 'info': 'Let this lighthouse reveal your text.',
+                 'title': 'Lighthouse',
+                 'disclaimer':'',
+                 'disclaimer_href':'/disclaimer/58/?redirect=true',
+//                 'disclaimer_mandatory':false,
+                 'disclaimer_mandatory':false,
+                 'timestamp': '20120924',
+                 'date': '09 24, 2012',
+                 'produced_paid': 26,
+                 'length': '16',
+                 'fps': '25',
+                 'related': [60],
+                 'related_thumb': 'http://ivipid.com/site_media/content/templates/vipids/58/example_image.jpg.133x75_q95.jpg',
+                 'background': '#080808',
+                 'baseprice': 0,
+                 'customizations': [{"amount": 3, "type": "string", "name": "text fields"}],
+                 'file': 'http://d3stzszue4x9wz.cloudfront.net/content/2__uid/331000_castlerock/331000_castlerock.mp4'
+                },
+
+35:{'image':'http://ivipid.com/site_media/content/templates/vipids/None/example_image_16.jpg.640x360_q90.jpg',
+                 'href': '/customize/shiled_image/',
+                 'id': '35',
+                 'boom_href': '/project/create/shiled_image/',
+                 'disclaimer_href': '',
+                 'info': 'Shield in the sky intro. Now with your picture !',
+                 'title': 'Shield in the sky II',
+                 'disclaimer':'',
+                 'disclaimer_href':'/disclaimer/35/?redirect=true',
+//                 'disclaimer_mandatory':false,
+                 'disclaimer_mandatory':false,
+                 'timestamp': '20120505',
+                 'date': '05 05, 2012',
+                 'produced_paid': 25,
+                 'length': '15',
+                 'fps': '25',
+                 'related': [],
+                 'related_thumb': 'http://ivipid.com/site_media/content/templates/vipids/None/example_image_16.jpg.133x75_q95.jpg',
+                 'background': '#0031a1',
+                 'baseprice': 0,
+                 'customizations': [{"amount": 1, "type": "image", "name": "image"}, {"amount": 3, "type": "string", "name": "text fields"}],
+                 'file': 'http://d3stzszue4x9wz.cloudfront.net/content/6__uid/173178_warnerbros_image/173178_warnerbros_image_sd.mp4'
+                },
+
+30:{'image':'http://ivipid.com/site_media/content/templates/vipids/30/example_image_1.jpg.640x360_q90.jpg',
+                 'href': '/customize/build_up/',
+                 'id': '30',
+                 'boom_href': '/project/create/build_up/',
+                 'disclaimer_href': '',
+                 'info': 'Media geometry perfect for every purpose.',
+                 'title': 'Infosphere',
+                 'disclaimer':'',
+                 'disclaimer_href':'/disclaimer/30/?redirect=true',
+//                 'disclaimer_mandatory':false,
+                 'disclaimer_mandatory':false,
+                 'timestamp': '20120412',
+                 'date': '04 12, 2012',
+                 'produced_paid': 24,
+                 'length': '10',
+                 'fps': '25',
+                 'related': [],
+                 'related_thumb': 'http://ivipid.com/site_media/content/templates/vipids/30/example_image_1.jpg.133x75_q95.jpg',
+                 'background': '#',
+                 'baseprice': 0,
+                 'customizations': [{"amount": 2, "type": "string", "name": "text fields"}, {"amount": 2, "type": "choice", "name": "choice fields"}],
+                 'file': 'http://d3stzszue4x9wz.cloudfront.net/content/6459__uid/173159_build_up/173159_build_up_sd.mp4'
+                },
+
+12:{'image':'http://ivipid.com/site_media/content/templates/vipids/12/example_image_1.jpg.640x360_q90.jpg',
+                 'href': '/customize/4g_style/',
+                 'id': '12',
+                 'boom_href': '/project/create/4g_style/',
+                 'disclaimer_href': '',
+                 'info': 'Mock-up for the famous letters.',
+                 'title': '4G-Style',
+                 'disclaimer':'',
+                 'disclaimer_href':'/disclaimer/12/?redirect=true',
+//                 'disclaimer_mandatory':false,
+                 'disclaimer_mandatory':false,
+                 'timestamp': '20120311',
+                 'date': '03 11, 2012',
+                 'produced_paid': 23,
+                 'length': '22',
+                 'fps': '25',
+                 'related': [],
+                 'related_thumb': 'http://ivipid.com/site_media/content/templates/vipids/12/example_image_1.jpg.133x75_q95.jpg',
+                 'background': '#',
+                 'baseprice': 0,
+                 'customizations': [{"amount": 3, "type": "string", "name": "text fields"}],
+                 'file': 'http://d3stzszue4x9wz.cloudfront.net/content/6459__uid/173162_4g_style/173162_4g_style_sd.mp4'
+                },
+
+18:{'image':'http://ivipid.com/site_media/content/templates/vipids/18/example_image_1.jpg.640x360_q90.jpg',
+                 'href': '/customize/suspense/',
+                 'id': '18',
+                 'boom_href': '/project/create/suspense/',
+                 'disclaimer_href': '',
+                 'info': 'Original somewhat cosmic theme.',
+                 'title': 'Suspense',
+                 'disclaimer':'',
+                 'disclaimer_href':'/disclaimer/18/?redirect=true',
+//                 'disclaimer_mandatory':false,
+                 'disclaimer_mandatory':false,
+                 'timestamp': '20120311',
+                 'date': '03 11, 2012',
+                 'produced_paid': 22,
+                 'length': '23',
+                 'fps': '25',
+                 'related': [],
+                 'related_thumb': 'http://ivipid.com/site_media/content/templates/vipids/18/example_image_1.jpg.133x75_q95.jpg',
+                 'background': '#',
+                 'baseprice': 0,
+                 'customizations': [{"amount": 4, "type": "string", "name": "text fields"}],
+                 'file': 'http://d3stzszue4x9wz.cloudfront.net/content/6459__uid/173160_suspense/173160_suspense_sd.mp4'
+                },
+
+22:{'image':'http://ivipid.com/site_media/content/templates/vipids/22/example_image_3.jpg.640x360_q90.jpg',
+                 'href': '/customize/lucasfilm/',
+                 'id': '22',
+                 'boom_href': '/project/create/lucasfilm/',
+                 'disclaimer_href': '',
+                 'info': 'Short version of STAR TEXT theme.',
+                 'title': 'Adventure',
+                 'disclaimer':'',
+                 'disclaimer_href':'/disclaimer/22/?redirect=true',
+//                 'disclaimer_mandatory':false,
+                 'disclaimer_mandatory':false,
+                 'timestamp': '20120311',
+                 'date': '03 11, 2012',
+                 'produced_paid': 21,
+                 'length': '10',
+                 'fps': '25',
+                 'related': [],
+                 'related_thumb': 'http://ivipid.com/site_media/content/templates/vipids/22/example_image_3.jpg.133x75_q95.jpg',
+                 'background': '#',
+                 'baseprice': 0,
+                 'customizations': [{"amount": 3, "type": "string", "name": "text fields"}, {"amount": 1, "type": "choice", "name": "choice field"}],
+                 'file': 'http://d3stzszue4x9wz.cloudfront.net/content/3_deep/1812_lucasfilm/1812_lucasfilm.mp4'
+                },
+
+53:{'image':'http://ivipid.com/site_media/content/templates/vipids/53/example_image.jpg.640x360_q90.jpg',
+                 'href': '/customize/universal_moon/',
+                 'id': '53',
+                 'boom_href': '/project/create/universal_moon/',
+                 'disclaimer_href': '',
+                 'info': 'Watch the Moon revealing your own text.',
+                 'title': 'Universal Moon',
+                 'disclaimer':'',
+                 'disclaimer_href':'/disclaimer/53/?redirect=true',
+//                 'disclaimer_mandatory':false,
+                 'disclaimer_mandatory':false,
+                 'timestamp': '20120411',
+                 'date': '04 11, 2012',
+                 'produced_paid': 20,
+                 'length': '22',
+                 'fps': '25',
+                 'related': [8, 54],
+                 'related_thumb': 'http://ivipid.com/site_media/content/templates/vipids/53/example_image.jpg.133x75_q95.jpg',
+                 'background': '#',
+                 'baseprice': 0,
+                 'customizations': [{"amount": 2, "type": "string", "name": "text fields"}, {"amount": 1, "type": "choice", "name": "choice field"}],
+                 'file': 'http://d3stzszue4x9wz.cloudfront.net/content/6459__uid/194170_universal_moon/194170_universal_moon_sd.mp4'
+                },
+
+13:{'image':'http://ivipid.com/site_media/content/templates/vipids/13/example_image.jpg.640x360_q90.jpg',
+                 'href': '/customize/glamurama/',
+                 'id': '13',
+                 'boom_href': '/project/create/glamurama/',
+                 'disclaimer_href': '',
+                 'info': 'Fancy and shiny theme.',
+                 'title': 'Glamour intro',
+                 'disclaimer':'',
+                 'disclaimer_href':'/disclaimer/13/?redirect=true',
+//                 'disclaimer_mandatory':false,
+                 'disclaimer_mandatory':false,
+                 'timestamp': '20120311',
+                 'date': '03 11, 2012',
+                 'produced_paid': 19,
+                 'length': '10',
+                 'fps': '25',
+                 'related': [],
+                 'related_thumb': 'http://ivipid.com/site_media/content/templates/vipids/13/example_image.jpg.133x75_q95.jpg',
+                 'background': '#',
+                 'baseprice': 0,
+                 'customizations': [{"amount": 3, "type": "string", "name": "text fields"}],
+                 'file': 'http://d3stzszue4x9wz.cloudfront.net/content/6459__uid/173145_glamurama/173145_glamurama_sd.mp4'
+                },
+
+59:{'image':'http://ivipid.com/site_media/content/templates/vipids/None/example_image.jpeg.640x360_q90.jpg',
+                 'href': '/customize/mgm/',
+                 'id': '59',
+                 'boom_href': '/project/create/mgm/',
+                 'disclaimer_href': '',
+                 'info': 'Make roar anyone you know.',
+                 'title': 'Roar',
+                 'disclaimer':'',
+                 'disclaimer_href':'/disclaimer/59/?redirect=true',
+//                 'disclaimer_mandatory':false,
+                 'disclaimer_mandatory':false,
+                 'timestamp': '20121025',
+                 'date': '10 25, 2012',
+                 'produced_paid': 18,
+                 'length': '15',
+                 'fps': '25',
+                 'related': [],
+                 'related_thumb': 'http://ivipid.com/site_media/content/templates/vipids/None/example_image.jpeg.133x75_q95.jpg',
+                 'background': '#080808',
+                 'baseprice': 0,
+                 'customizations': [{"amount": 1, "type": "video", "name": "video clip"}, {"amount": 4, "type": "string", "name": "text fields"}],
+                 'file': 'http://d3stzszue4x9wz.cloudfront.net/content/2__uid/362175_mgm/362175_mgm_sd_processed_0_sd.mp4'
+                },
+
+28:{'image':'http://ivipid.com/site_media/content/templates/vipids/28/example_image_1.jpg.640x360_q90.jpg',
+                 'href': '/customize/epic_titles/',
+                 'id': '28',
+                 'boom_href': '/project/create/epic_titles/',
+                 'disclaimer_href': '',
+                 'info': 'Your text brought by epic smoke.',
+                 'title': 'Epic Smoky Titles',
+                 'disclaimer':'',
+                 'disclaimer_href':'/disclaimer/28/?redirect=true',
+//                 'disclaimer_mandatory':false,
+                 'disclaimer_mandatory':false,
+                 'timestamp': '20120314',
+                 'date': '03 14, 2012',
+                 'produced_paid': 17,
+                 'length': '24',
+                 'fps': '25',
+                 'related': [],
+                 'related_thumb': 'http://ivipid.com/site_media/content/templates/vipids/28/example_image_1.jpg.133x75_q95.jpg',
+                 'background': '#',
+                 'baseprice': 0,
+                 'customizations': [{"amount": 6, "type": "string", "name": "text fields"}],
+                 'file': 'http://d3stzszue4x9wz.cloudfront.net/content/6459__uid/173161_epic_titles/173161_epic_titles_sd.mp4'
+                },
+
+11:{'image':'http://ivipid.com/site_media/content/templates/vipids/11/example_image.jpg.640x360_q90.jpg',
+                 'href': '/customize/abstract_01/',
+                 'id': '11',
+                 'boom_href': '/project/create/abstract_01/',
+                 'disclaimer_href': '',
+                 'info': 'Short intro with several color schemes.',
+                 'title': 'Design intro',
+                 'disclaimer':'',
+                 'disclaimer_href':'/disclaimer/11/?redirect=true',
+//                 'disclaimer_mandatory':false,
+                 'disclaimer_mandatory':false,
+                 'timestamp': '20120311',
+                 'date': '03 11, 2012',
+                 'produced_paid': 16,
+                 'length': '8',
+                 'fps': '25',
+                 'related': [],
+                 'related_thumb': 'http://ivipid.com/site_media/content/templates/vipids/11/example_image.jpg.133x75_q95.jpg',
+                 'background': '#',
+                 'baseprice': 0,
+                 'customizations': [{"amount": 2, "type": "string", "name": "text fields"}, {"amount": 1, "type": "choice", "name": "choice field"}],
+                 'file': 'http://d3stzszue4x9wz.cloudfront.net/content/6459__uid/173153_abstract_01/173153_abstract_01_sd.mp4'
+                },
+
+54:{'image':'http://ivipid.com/site_media/content/templates/vipids/54/example_image_1.jpg.640x360_q90.jpg',
+                 'href': '/customize/universal_sun/',
+                 'id': '54',
+                 'boom_href': '/project/create/universal_sun/',
+                 'disclaimer_href': '',
+                 'info': 'Watch the Sun revealing your own text.',
+                 'title': 'Universal Sun',
+                 'disclaimer':'',
+                 'disclaimer_href':'/disclaimer/54/?redirect=true',
+//                 'disclaimer_mandatory':false,
+                 'disclaimer_mandatory':false,
+                 'timestamp': '20120514',
+                 'date': '05 14, 2012',
+                 'produced_paid': 15,
+                 'length': '22',
+                 'fps': '25',
+                 'related': [53, 8],
+                 'related_thumb': 'http://ivipid.com/site_media/content/templates/vipids/54/example_image_1.jpg.133x75_q95.jpg',
+                 'background': '#080808',
+                 'baseprice': 0,
+                 'customizations': [{"amount": 2, "type": "string", "name": "text fields"}, {"amount": 1, "type": "choice", "name": "choice field"}],
+                 'file': 'http://d3stzszue4x9wz.cloudfront.net/content/2__uid/218234_universal_sun/218234_universal_sun_sd.mp4'
+                },
+
+60:{'image':'http://ivipid.com/site_media/content/templates/vipids/60/example_image_1.jpg.640x360_q90.jpg',
+                 'href': '/customize/spyglass/',
+                 'id': '60',
+                 'boom_href': '/project/create/spyglass/',
+                 'disclaimer_href': '',
+                 'info': 'Through the looking glass.',
+                 'title': 'Telescope',
+                 'disclaimer':'',
+                 'disclaimer_href':'/disclaimer/60/?redirect=true',
+//                 'disclaimer_mandatory':false,
+                 'disclaimer_mandatory':false,
+                 'timestamp': '20130924',
+                 'date': '09 24, 2013',
+                 'produced_paid': 14,
+                 'length': '21',
+                 'fps': '25',
+                 'related': [58],
+                 'related_thumb': 'http://ivipid.com/site_media/content/templates/vipids/60/example_image_1.jpg.133x75_q95.jpg',
+                 'background': '#080808',
+                 'baseprice': 200,
+                 'customizations': [{"amount": 2, "type": "string", "name": "text fields"}],
+                 'file': 'http://d3stzszue4x9wz.cloudfront.net/content/2__uid/642285_spyglass/642285_spyglass_sd.mp4'
+                },
+
+16:{'image':'http://ivipid.com/site_media/content/templates/vipids/16/example_image.jpg.640x360_q90.jpg',
+                 'href': '/customize/facebook_id/',
+                 'id': '16',
+                 'boom_href': '/project/create/facebook_id/',
+                 'disclaimer_href': '',
+                 'info': 'Social network theme.',
+                 'title': 'facebook ID',
+                 'disclaimer':'',
+                 'disclaimer_href':'/disclaimer/16/?redirect=true',
+//                 'disclaimer_mandatory':false,
+                 'disclaimer_mandatory':false,
+                 'timestamp': '20120311',
+                 'date': '03 11, 2012',
+                 'produced_paid': 13,
+                 'length': '8',
+                 'fps': '25',
+                 'related': [],
+                 'related_thumb': 'http://ivipid.com/site_media/content/templates/vipids/16/example_image.jpg.133x75_q95.jpg',
+                 'background': '#',
+                 'baseprice': 0,
+                 'customizations': [{"amount": 2, "type": "string", "name": "text fields"}],
+                 'file': 'http://d3stzszue4x9wz.cloudfront.net/content/6459__uid/173152_facebook_id/173152_facebook_id_sd.mp4'
+                },
+
+57:{'image':'http://ivipid.com/site_media/content/templates/vipids/57/example_image.jpg.640x360_q90.jpg',
+                 'href': '/customize/focus/',
+                 'id': '57',
+                 'boom_href': '/project/create/focus/',
+                 'disclaimer_href': '',
+                 'info': 'Blurry shapes you all know.',
+                 'title': 'Bokeh Features',
+                 'disclaimer':'',
+                 'disclaimer_href':'/disclaimer/57/?redirect=true',
+//                 'disclaimer_mandatory':false,
+                 'disclaimer_mandatory':false,
+                 'timestamp': '20120726',
+                 'date': '07 26, 2012',
+                 'produced_paid': 12,
+                 'length': '17',
+                 'fps': '25',
+                 'related': [],
+                 'related_thumb': 'http://ivipid.com/site_media/content/templates/vipids/57/example_image.jpg.133x75_q95.jpg',
+                 'background': '#080808',
+                 'baseprice': 0,
+                 'customizations': [{"amount": 3, "type": "string", "name": "text fields"}, {"amount": 1, "type": "choice", "name": "choice field"}],
+                 'file': 'http://d3stzszue4x9wz.cloudfront.net/content/2__uid/281880_focus/281880_focus_sd.mp4'
+                },
+
+52:{'image':'http://ivipid.com/site_media/content/templates/vipids/52/example_image.jpg.640x360_q90.jpg',
+                 'href': '/customize/scary_intro_1/',
+                 'id': '52',
+                 'boom_href': '/project/create/scary_intro_1/',
+                 'disclaimer_href': '',
+                 'info': 'Mistic color toned theme.',
+                 'title': 'Scary Intro',
+                 'disclaimer':'',
+                 'disclaimer_href':'/disclaimer/52/?redirect=true',
+//                 'disclaimer_mandatory':false,
+                 'disclaimer_mandatory':false,
+                 'timestamp': '20120101',
+                 'date': '01 01, 2012',
+                 'produced_paid': 11,
+                 'length': '68',
+                 'fps': '25',
+                 'related': [],
+                 'related_thumb': 'http://ivipid.com/site_media/content/templates/vipids/52/example_image.jpg.133x75_q95.jpg',
+                 'background': '#383b4a',
+                 'baseprice': 0,
+                 'customizations': [{"amount": 9, "type": "image", "name": "images"}, {"amount": 11, "type": "string", "name": "text fields"}, {"amount": 2, "type": "choice", "name": "choice fields"}],
+                 'file': 'http://d3stzszue4x9wz.cloudfront.net/content/2__uid/173184_scary_intro_1/173184_scary_intro_1_sd.mp4'
+                },
+
+55:{'image':'http://ivipid.com/site_media/content/templates/vipids/55/example_image.jpg.640x360_q90.jpg',
+                 'href': '/customize/football_pro/',
+                 'id': '55',
+                 'boom_href': '/project/create/football_pro/',
+                 'disclaimer_href': '',
+                 'info': 'For sport events out there. With your own images.',
+                 'title': 'Football',
+                 'disclaimer':'',
+                 'disclaimer_href':'/disclaimer/55/?redirect=true',
+//                 'disclaimer_mandatory':false,
+                 'disclaimer_mandatory':false,
+                 'timestamp': '20120706',
+                 'date': '07 06, 2012',
+                 'produced_paid': 10,
+                 'length': '25',
+                 'fps': '25',
+                 'related': [],
+                 'related_thumb': 'http://ivipid.com/site_media/content/templates/vipids/55/example_image.jpg.133x75_q95.jpg',
+                 'background': '#080808',
+                 'baseprice': 0,
+                 'customizations': [{"amount": 4, "type": "image", "name": "images"}, {"amount": 7, "type": "string", "name": "text fields"}],
+                 'file': 'http://d3stzszue4x9wz.cloudfront.net/content/2__uid/262905_football_pro/262905_football_pro_sd.mp4'
+                },
+
+36:{'image':'http://ivipid.com/site_media/content/templates/vipids/36/example_image.jpg.640x360_q90.jpg',
+                 'href': '/customize/4g_style_tv/',
+                 'id': '36',
+                 'boom_href': '/project/create/4g_style_tv/',
+                 'disclaimer_href': '',
+                 'info': '4G Style theme with your own images.',
+                 'title': ' 4G-Style TV',
+                 'disclaimer':'',
+                 'disclaimer_href':'/disclaimer/36/?redirect=true',
+//                 'disclaimer_mandatory':false,
+                 'disclaimer_mandatory':false,
+                 'timestamp': '20120505',
+                 'date': '05 05, 2012',
+                 'produced_paid': 9,
+                 'length': '22',
+                 'fps': '25',
+                 'related': [],
+                 'related_thumb': 'http://ivipid.com/site_media/content/templates/vipids/36/example_image.jpg.133x75_q95.jpg',
+                 'background': '#',
+                 'baseprice': 0,
+                 'customizations': [{"amount": 5, "type": "image", "name": "images"}, {"amount": 1, "type": "string", "name": "text field"}],
+                 'file': 'http://d3stzszue4x9wz.cloudfront.net/content/6__uid/173174_4g_style_tv/173174_4g_style_tv.mp4'
+                },
+
+42:{'image':'http://ivipid.com/site_media/content/templates/vipids/42/example_image_2.jpg.640x360_q90.jpg',
+                 'href': '/customize/product_promo/',
+                 'id': '42',
+                 'boom_href': '/project/create/product_promo/',
+                 'disclaimer_href': '',
+                 'info': '',
+                 'title': 'Promo',
+                 'disclaimer':'',
+                 'disclaimer_href':'/disclaimer/42/?redirect=true',
+//                 'disclaimer_mandatory':false,
+                 'disclaimer_mandatory':false,
+                 'timestamp': '20120520',
+                 'date': '05 20, 2012',
+                 'produced_paid': 8,
+                 'length': '13',
+                 'fps': '25',
+                 'related': [],
+                 'related_thumb': 'http://ivipid.com/site_media/content/templates/vipids/42/example_image_2.jpg.133x75_q95.jpg',
+                 'background': '#',
+                 'baseprice': 0,
+                 'customizations': [{"amount": 1, "type": "image", "name": "image"}, {"amount": 2, "type": "string", "name": "text fields"}],
+                 'file': 'http://d3stzszue4x9wz.cloudfront.net/content/3__uid/173185_product_promo/173185_product_promo_sd.mp4'
+                },
+
+39:{'image':'http://ivipid.com/site_media/content/templates/vipids/39/example_image_5.jpg.640x360_q90.jpg',
+                 'href': '/customize/romantic_titles2/',
+                 'id': '39',
+                 'boom_href': '/project/create/romantic_titles2/',
+                 'disclaimer_href': '',
+                 'info': 'Sweet and romantic theme with your images.',
+                 'title': 'Romantic Titles II',
+                 'disclaimer':'',
+                 'disclaimer_href':'/disclaimer/39/?redirect=true',
+//                 'disclaimer_mandatory':false,
+                 'disclaimer_mandatory':false,
+                 'timestamp': '20120512',
+                 'date': '05 12, 2012',
+                 'produced_paid': 7,
+                 'length': '24',
+                 'fps': '25',
+                 'related': [],
+                 'related_thumb': 'http://ivipid.com/site_media/content/templates/vipids/39/example_image_5.jpg.133x75_q95.jpg',
+                 'background': '#aa0034',
+                 'baseprice': 0,
+                 'customizations': [{"amount": 4, "type": "image", "name": "images"}, {"amount": 6, "type": "string", "name": "text fields"}],
+                 'file': 'http://d3stzszue4x9wz.cloudfront.net/content/6__uid/173177_romantic_titles2/173177_romantic_titles2_sd.mp4'
+                },
+
+10:{'image':'http://ivipid.com/site_media/content/templates/vipids/10/example_image_2.jpg.640x360_q90.jpg',
+                 'href': '/customize/homewood/',
+                 'id': '10',
+                 'boom_href': '/project/create/homewood/',
+                 'disclaimer_href': '',
+                 'info': 'A castle in space whit your own text.',
+                 'title': 'Homewood',
+                 'disclaimer':'',
+                 'disclaimer_href':'/disclaimer/10/?redirect=true',
+//                 'disclaimer_mandatory':false,
+                 'disclaimer_mandatory':false,
+                 'timestamp': '20120311',
+                 'date': '03 11, 2012',
+                 'produced_paid': 6,
+                 'length': '14',
+                 'fps': '25',
+                 'related': [],
+                 'related_thumb': 'http://ivipid.com/site_media/content/templates/vipids/10/example_image_2.jpg.133x75_q95.jpg',
+                 'background': '#',
+                 'baseprice': 0,
+                 'customizations': [{"amount": 2, "type": "string", "name": "text fields"}, {"amount": 3, "type": "choice", "name": "choice fields"}],
+                 'file': 'http://d3stzszue4x9wz.cloudfront.net/content/6459__uid/173163_homewood/173163_homewood_sd.mp4'
+                },
+
+9:{'image':'http://ivipid.com/site_media/content/templates/vipids/9/example_image_1.jpg.640x360_q90.jpg',
+                 'href': '/customize/halloween/',
+                 'id': '9',
+                 'boom_href': '/project/create/halloween/',
+                 'disclaimer_href': '',
+                 'info': 'Halloween greeting card',
+                 'title': 'Halloween',
+                 'disclaimer':'',
+                 'disclaimer_href':'/disclaimer/9/?redirect=true',
+//                 'disclaimer_mandatory':false,
+                 'disclaimer_mandatory':false,
+                 'timestamp': '20110311',
+                 'date': '03 11, 2011',
+                 'produced_paid': 5,
+                 'length': '22',
+                 'fps': '25',
+                 'related': [],
+                 'related_thumb': 'http://ivipid.com/site_media/content/templates/vipids/9/example_image_1.jpg.133x75_q95.jpg',
+                 'background': '#',
+                 'baseprice': 0,
+                 'customizations': [{"amount": 4, "type": "string", "name": "text fields"}],
+                 'file': 'http://d3stzszue4x9wz.cloudfront.net/content/3_deep/1502_halloween/1502_halloween.mp4'
+                },
+
+20:{'image':'http://ivipid.com/site_media/content/templates/vipids/None/example_image_8.jpg.640x360_q90.jpg',
+                 'href': '/customize/countrychristmas/',
+                 'id': '20',
+                 'boom_href': '/project/create/countrychristmas/',
+                 'disclaimer_href': '',
+                 'info': 'Christmas theme your loved ones will definitely enjoy.',
+                 'title': 'Country Christmas',
+                 'disclaimer':'',
+                 'disclaimer_href':'/disclaimer/20/?redirect=true',
+//                 'disclaimer_mandatory':false,
+                 'disclaimer_mandatory':false,
+                 'timestamp': '20120311',
+                 'date': '03 11, 2012',
+                 'produced_paid': 4,
+                 'length': '22',
+                 'fps': '25',
+                 'related': [],
+                 'related_thumb': 'http://ivipid.com/site_media/content/templates/vipids/None/example_image_8.jpg.133x75_q95.jpg',
+                 'background': '#',
+                 'baseprice': 0,
+                 'customizations': [{"amount": 5, "type": "string", "name": "text fields"}],
+                 'file': 'http://d3stzszue4x9wz.cloudfront.net/content/6459__uid/173157_countrychristmas/173157_countrychristmas_sd.mp4'
+                },
+
+14:{'image':'http://ivipid.com/site_media/content/templates/vipids/14/example_image_1.jpg.640x360_q90.jpg',
+                 'href': '/customize/cats/',
+                 'id': '14',
+                 'boom_href': '/project/create/cats/',
+                 'disclaimer_href': '',
+                 'info': 'These funny kittens will make your favourite person smile.',
+                 'title': 'Holiday cats',
+                 'disclaimer':'',
+                 'disclaimer_href':'/disclaimer/14/?redirect=true',
+//                 'disclaimer_mandatory':false,
+                 'disclaimer_mandatory':false,
+                 'timestamp': '20120311',
+                 'date': '03 11, 2012',
+                 'produced_paid': 3,
+                 'length': '17',
+                 'fps': '25',
+                 'related': [],
+                 'related_thumb': 'http://ivipid.com/site_media/content/templates/vipids/14/example_image_1.jpg.133x75_q95.jpg',
+                 'background': '#',
+                 'baseprice': 0,
+                 'customizations': [{"amount": 4, "type": "string", "name": "text fields"}],
+                 'file': 'http://d3stzszue4x9wz.cloudfront.net/content/6459__uid/173154_cats/173154_cats_sd.mp4'
+                },
+
+24:{'image':'http://ivipid.com/site_media/content/templates/vipids/24/example_image.jpg.640x360_q90.jpg',
+                 'href': '/customize/romantic_titles/',
+                 'id': '24',
+                 'boom_href': '/project/create/romantic_titles/',
+                 'disclaimer_href': '',
+                 'info': 'Sweet and romantic theme.',
+                 'title': 'Romantic Titles',
+                 'disclaimer':'',
+                 'disclaimer_href':'/disclaimer/24/?redirect=true',
+//                 'disclaimer_mandatory':false,
+                 'disclaimer_mandatory':false,
+                 'timestamp': '20120311',
+                 'date': '03 11, 2012',
+                 'produced_paid': 2,
+                 'length': '24',
+                 'fps': '25',
+                 'related': [],
+                 'related_thumb': 'http://ivipid.com/site_media/content/templates/vipids/24/example_image.jpg.133x75_q95.jpg',
+                 'background': '#aa0034',
+                 'baseprice': 0,
+                 'customizations': [{"amount": 6, "type": "string", "name": "text fields"}],
+                 'file': 'http://d3stzszue4x9wz.cloudfront.net/content/6459__uid/173164_romantic_titles/173164_romantic_titles_sd.mp4'
+                },
+
+19:{'image':'http://ivipid.com/site_media/content/templates/vipids/19/example_image.jpg.640x360_q90.jpg',
+                 'href': '/customize/christmas/',
+                 'id': '19',
+                 'boom_href': '/project/create/christmas/',
+                 'disclaimer_href': '',
+                 'info': 'Make a video Christmas card like no one’s done before.',
+                 'title': 'Christmas card',
+                 'disclaimer':'',
+                 'disclaimer_href':'/disclaimer/19/?redirect=true',
+//                 'disclaimer_mandatory':false,
+                 'disclaimer_mandatory':false,
+                 'timestamp': '20120311',
+                 'date': '03 11, 2012',
+                 'produced_paid': 1,
+                 'length': '15',
+                 'fps': '25',
+                 'related': [],
+                 'related_thumb': 'http://ivipid.com/site_media/content/templates/vipids/19/example_image.jpg.133x75_q95.jpg',
+                 'background': '#9b0303',
+                 'baseprice': 0,
+                 'customizations': [{"amount": 2, "type": "string", "name": "text fields"}, {"amount": 2, "type": "choice", "name": "choice fields"}],
+                 'file': 'http://d3stzszue4x9wz.cloudfront.net/content/6459__uid/173155_christmas/173155_christmas_sd.mp4'
+                },
+
+17:{'image':'http://ivipid.com/site_media/content/templates/vipids/None/example_image_7.jpg.640x360_q90.jpg',
+                 'href': '/customize/halloween_stereo/',
+                 'id': '17',
+                 'boom_href': '/project/create/halloween_stereo/',
+                 'disclaimer_href': '',
+                 'info': 'Anaglyph stereo Halloween greeting card ',
+                 'title': 'Halloween 3-D',
+                 'disclaimer':'',
+                 'disclaimer_href':'/disclaimer/17/?redirect=true',
+//                 'disclaimer_mandatory':false,
+                 'disclaimer_mandatory':false,
+                 'timestamp': '20110311',
+                 'date': '03 11, 2011',
+                 'produced_paid': 0,
+                 'length': '22',
+                 'fps': '25',
+                 'related': [],
+                 'related_thumb': 'http://ivipid.com/site_media/content/templates/vipids/None/example_image_7.jpg.133x75_q95.jpg',
+                 'background': '#',
+                 'baseprice': 300,
+                 'customizations': [{"amount": 4, "type": "string", "name": "text fields"}],
+                 'file': 'http://d3stzszue4x9wz.cloudfront.net/content/3_deep/1503_halloween_stereo/1503_halloween_stereo.mp4'
+                }
+
+};
+
+var skin = "http://ivipid.com/site_media/static/skins/default/";
+$(document).ready(function() {
+    $("#template-details").center();
+    $("#vipid-thumbs").isotope({
+        itemSelector : ".vipid-thumb",
+        layoutMode : "fitRows",
+        getSortData : {
+            date : function ( $elem ) {
+                return videos[$elem.attr("id")].timestamp;
+            },
+            popularity : function ( $elem ) {
+                return videos[$elem.attr("id")].produced_paid;
+            },
+            title : function ( $elem ) {
+                var s = videos[$elem.attr("id")].title;
+                return $.trim(s).toUpperCase();
+            }
+        }
+    });
+    
+    function cyclic(n, max) {
+        if (n > max) 
+            return cyclic((n - max), max)
+        else 
+            return n;
+    }
+    
+    function recycle_cols() {
+        var cnt = 1;
+        $(".vipid-thumb").each(function(){
+            $(this).removeClass("col1 col2 col3 col4").addClass("col"+cyclic(cnt, 4));
+            cnt += 1;
+        });
+    }
+    
+    $('#sort a').click(function(){
+        $("#vipid-thumbs").isotope({ filter: "*" });
+        var sortName = $(this).attr('href').slice(1);
+        $("#vipid-thumbs").isotope({ sortBy : sortName, sortAscending: sortName == "title" });
+        //  recycle_cols();
+        return false;
+    });
+    
+    $('#filter a').click(function(){
+        var selector = $(this).attr('data-filter');
+        $("#vipid-thumbs").isotope({ filter: selector });
+        //  recycle_cols();
+        return false;
+    });
+    
+    $("#buttons a").click(function() {
+        $("#buttons a.selected").removeClass("selected");
+        $(this).addClass("selected");
+    });
+    
+    jQuery.fn.center = function () {
+        this.css("position","absolute");
+        this.css("top", Math.max(0, (($(window).height() - this.outerHeight()) / 2) + 
+                                 $(window).scrollTop()) + "px");
+        this.css("left", Math.max(0, (($(window).width() - this.outerWidth()) / 2) + 
+                                  $(window).scrollLeft()) + "px");
+        return this;
+    }
+    
+    $(".vipid-thumb").click(function() {
+        overlayOn();
+        $("#overlay").live("click",function(){$("#template-details-close").click()});
+        var id = $(this).attr("rel");
+        
+        if (videos[id].related.length > 0) {
+            $(".related-thumb").hide().remove();
+            var rids = videos[id].related;
+            $("#hdivisor").show();
+            $("#template-details-inner").css("height","510px");
+            $("#related-block").show();
+            for (var i=0; i < rids.length; i++) {
+                var el = $("<div/>", {"class":"related-thumb"}).css("background","url("+videos[rids[i]].related_thumb+")");
+                $("<a/>", {"href": videos[rids[i]].href, "html": el}).appendTo("#related-block");
+            }
+        } else {
+            $("#hdivisor").hide();
+            $("#related-block").hide();             
+            $("#template-details-inner").css("height","386px");
+            
+        }
+        $("#details-img").attr("src", videos[id].image);
+        
+        var href='';
+        
+        
+        if(videos[id].disclaimer_mandatory){
+            href = videos[id].disclaimer_href;
+        } else {
+            href = videos[id].href;
+        }
+        
+        
+        $("#details-link").attr("href", href);
+
+        var details = $("#template-details");
+        details.find("#info-short").html(videos[id].info);
+        details.find("#title").html(videos[id].title);
+        details.find("#created").html("Created on " + videos[id].date);
+        details.find("#fps").html(videos[id].fps + " fps");
+        details.find("#length").html(videos[id].length + " sec");
+        
+        $("#customize-list").empty()    
+        $.each(videos[id].customizations, function(k,v) {
+            var li = $("<li/>")
+            var img = $("<img/>", {src: skin + v.type + "-icon.png"});
+            var span = $("<span/>", {text: "" + v.amount + " " + v.name});
+            li.append(img).append(span);
+            $("#customize-list").append(li);
+        })
+            
+        $(document).bind("keydown", Document_esc_handler);
+        
+        details.center();
+        details.css("visibility","visible");
+        
+        
+        jwplayer("template-details-player-holder").setup( $.extend({}, {
+            flashplayer: "/site_media/static/player/player.swf?944b9c94e623c4eac337ed837a4fd874c57558c7", 
+            width: 640, 
+            height: 360
+                    }, 
+                                                                       {'file': example_movies[id], 'image':videos[id].image}, 
+                                                                       id in example_movies_hd ? { plugins: { hd: { file: example_movies_hd[id] }}} : {} ) );
+    });
+    
+    function Document_esc_handler(e)
+    {
+        if (e.keyCode === 27) {
+            e.preventDefault();
+            $("#template-details-close").click();
+        }            
+    }
+    
+
+    $("#template-details-close").click(function() {
+        $(document).unbind("keydown", Document_esc_handler);
+        $("#template-details").css("visibility","hidden");
+        jwplayer().stop();
+        $("#overlay").die("click");
+        overlayOff();
+    });
+    
+    var $optionSets = $('#options .option-set'),
+    $optionLinks = $optionSets.find('a');
+    
+    $optionLinks.click(function(){
+        var $this = $(this);
+        if ( $this.hasClass('selected') ) {
+          return false;
+        }
+        var $optionSet = $this.parents('.option-set');
+        $optionSet.find('.selected').removeClass('selected');
+        $this.addClass('selected');
+        return false;
+    });
 });
 </script>
 
@@ -842,43 +2021,556 @@ pass_inp.focus();
             
 
 	    
+<div id="switchers">
+<div class="caption">SORT BY:</div>
+<div id="buttons">
+    <ul id="sort" class="option-set clearfix" data-option-key="filter">
+        <li><a href="#popularity" class="selected">Rating</a></li>
+        <li><a href="#date">Date</a></li>
+        <li><a href="#title">Title</a></li>
+    </ul>
+</div>
+</div>
+<div class="main-heading">SELECT DESIRED THEME</div>
+<div class="buttons-hint">Scroll down all available themes. Use menu to change order. Then just click on the one you like.</div>
+ 
 
+<div id="vipid-thumbs">
     
-<div id="signin-vipid"></div>
+    <div rel="63" class="vipid-thumb" id="63">
+        <div class="sample-thumb">
 
+            <img width="290" height="163" src="/site_media/content/templates/vipids/63/example_image_1.png.290x163_q95.jpg" />
+            
+            <div class="chrome-title-select">Glass Ball</div>
+        </div>
+        
+        <div class="duration">22 sec.</div>
+        
+    </div>
     
-<div id="polygon">
-<a href="/accounts/login/" id="connect-fb"></a>
-<a href="/accounts/login/" id="connect-google"></a>
-<a href="/accounts/login/" id="connect-twitter"></a>
+    <div rel="62" class="vipid-thumb" id="62">
+        <div class="sample-thumb">
+
+            <img width="290" height="163" src="/site_media/content/templates/vipids/None/example_image_23.jpg.290x163_q95.jpg" />
+            
+            <div class="photo-icon"></div>
+            
+            <div class="chrome-title-select">Comics</div>
+        </div>
+        
+        <div class="duration">14 sec.</div>
+        
+    </div>
+    
+    <div rel="61" class="vipid-thumb" id="61">
+        <div class="sample-thumb">
+
+            <img width="290" height="163" src="/site_media/content/templates/vipids/61/example_image_2.jpg.290x163_q95.jpg" />
+            
+            <div class="chrome-title-select">Sunshine</div>
+        </div>
+        
+        <div class="duration">21 sec.</div>
+        
+    </div>
+    
+    <div rel="8" class="vipid-thumb" id="8">
+        <div class="sample-thumb">
+
+            <img width="290" height="163" src="/site_media/content/templates/vipids/8/example_image_3.jpg.290x163_q95.jpg" />
+            
+            <div class="chrome-title-select">The Globe</div>
+        </div>
+        
+        <div class="duration">22 sec.</div>
+        
+    </div>
+    
+    <div rel="7" class="vipid-thumb" id="7">
+        <div class="sample-thumb">
+
+            <img width="290" height="163" src="/site_media/content/templates/vipids/7/example_image_3.jpg.290x163_q95.jpg" />
+            
+            <div class="chrome-title-select">Jumping Lamp</div>
+        </div>
+        
+        <div class="duration">14 sec.</div>
+        
+    </div>
+    
+    <div rel="25" class="vipid-thumb" id="25">
+        <div class="sample-thumb">
+
+            <img width="290" height="163" src="/site_media/content/templates/vipids/25/example_image_3.jpg.290x163_q95.jpg" />
+            
+            <div class="chrome-title-select">Star Text</div>
+        </div>
+        
+        <div class="duration">70 sec.</div>
+        
+    </div>
+    
+    <div rel="23" class="vipid-thumb" id="23">
+        <div class="sample-thumb">
+
+            <img width="290" height="163" src="/site_media/content/templates/vipids/23/example_image_1.jpg.290x163_q95.jpg" />
+            
+            <div class="chrome-title-select">Gears</div>
+        </div>
+        
+        <div class="duration">20 sec.</div>
+        
+    </div>
+    
+    <div rel="15" class="vipid-thumb" id="15">
+        <div class="sample-thumb">
+
+            <img width="290" height="163" src="/site_media/content/templates/vipids/15/example_image_4.jpg.290x163_q95.jpg" />
+            
+            <div class="chrome-title-select">Your Video</div>
+        </div>
+        
+        <div class="duration">8 sec.</div>
+        
+    </div>
+    
+    <div rel="41" class="vipid-thumb" id="41">
+        <div class="sample-thumb">
+
+            <img width="290" height="163" src="/site_media/content/templates/vipids/41/example_image_5.jpg.290x163_q95.jpg" />
+            
+            <div class="chrome-title-select">Blue Cartoon Castle</div>
+        </div>
+        
+        <div class="duration">13 sec.</div>
+        
+    </div>
+    
+    <div rel="21" class="vipid-thumb" id="21">
+        <div class="sample-thumb">
+
+            <img width="290" height="163" src="/site_media/content/templates/vipids/21/example_image_2.jpg.290x163_q95.jpg" />
+            
+            <div class="chrome-title-select">Shield in the sky</div>
+        </div>
+        
+        <div class="duration">15 sec.</div>
+        
+    </div>
+    
+    <div rel="40" class="vipid-thumb" id="40">
+        <div class="sample-thumb">
+
+            <img width="290" height="163" src="/site_media/content/templates/vipids/40/example_image.jpg.290x163_q95.jpg" />
+            
+            <div class="photo-icon"></div>
+            
+            <div class="chrome-title-select">Epic Smoky Titles II</div>
+        </div>
+        
+        <div class="duration">24 sec.</div>
+        
+    </div>
+    
+    <div rel="56" class="vipid-thumb" id="56">
+        <div class="sample-thumb">
+
+            <img width="290" height="163" src="/site_media/content/templates/vipids/56/example_image.jpg.290x163_q95.jpg" />
+            
+            <div class="chrome-title-select">Torch Lady</div>
+        </div>
+        
+        <div class="duration">20 sec.</div>
+        
+    </div>
+    
+    <div rel="58" class="vipid-thumb" id="58">
+        <div class="sample-thumb">
+
+            <img width="290" height="163" src="/site_media/content/templates/vipids/58/example_image.jpg.290x163_q95.jpg" />
+            
+            <div class="chrome-title-select">Lighthouse</div>
+        </div>
+        
+        <div class="duration">16 sec.</div>
+        
+    </div>
+    
+    <div rel="35" class="vipid-thumb" id="35">
+        <div class="sample-thumb">
+
+            <img width="290" height="163" src="/site_media/content/templates/vipids/None/example_image_16.jpg.290x163_q95.jpg" />
+            
+            <div class="photo-icon"></div>
+            
+            <div class="chrome-title-select">Shield in the sky II</div>
+        </div>
+        
+        <div class="duration">15 sec.</div>
+        
+    </div>
+    
+    <div rel="30" class="vipid-thumb" id="30">
+        <div class="sample-thumb">
+
+            <img width="290" height="163" src="/site_media/content/templates/vipids/30/example_image_1.jpg.290x163_q95.jpg" />
+            
+            <div class="chrome-title-select">Infosphere</div>
+        </div>
+        
+        <div class="duration">10 sec.</div>
+        
+    </div>
+    
+    <div rel="12" class="vipid-thumb" id="12">
+        <div class="sample-thumb">
+
+            <img width="290" height="163" src="/site_media/content/templates/vipids/12/example_image_1.jpg.290x163_q95.jpg" />
+            
+            <div class="chrome-title-select">4G-Style</div>
+        </div>
+        
+        <div class="duration">22 sec.</div>
+        
+    </div>
+    
+    <div rel="18" class="vipid-thumb" id="18">
+        <div class="sample-thumb">
+
+            <img width="290" height="163" src="/site_media/content/templates/vipids/18/example_image_1.jpg.290x163_q95.jpg" />
+            
+            <div class="chrome-title-select">Suspense</div>
+        </div>
+        
+        <div class="duration">23 sec.</div>
+        
+    </div>
+    
+    <div rel="22" class="vipid-thumb" id="22">
+        <div class="sample-thumb">
+
+            <img width="290" height="163" src="/site_media/content/templates/vipids/22/example_image_3.jpg.290x163_q95.jpg" />
+            
+            <div class="chrome-title-select">Adventure</div>
+        </div>
+        
+        <div class="duration">10 sec.</div>
+        
+    </div>
+    
+    <div rel="53" class="vipid-thumb" id="53">
+        <div class="sample-thumb">
+
+            <img width="290" height="163" src="/site_media/content/templates/vipids/53/example_image.jpg.290x163_q95.jpg" />
+            
+            <div class="chrome-title-select">Universal Moon</div>
+        </div>
+        
+        <div class="duration">22 sec.</div>
+        
+    </div>
+    
+    <div rel="13" class="vipid-thumb" id="13">
+        <div class="sample-thumb">
+
+            <img width="290" height="163" src="/site_media/content/templates/vipids/13/example_image.jpg.290x163_q95.jpg" />
+            
+            <div class="chrome-title-select">Glamour intro</div>
+        </div>
+        
+        <div class="duration">10 sec.</div>
+        
+    </div>
+    
+    <div rel="59" class="vipid-thumb" id="59">
+        <div class="sample-thumb">
+
+            <img width="290" height="163" src="/site_media/content/templates/vipids/None/example_image.jpeg.290x163_q95.jpg" />
+            
+            <div class="chrome-title-select">Roar</div>
+        </div>
+        
+        <div class="duration">15 sec.</div>
+        
+    </div>
+    
+    <div rel="28" class="vipid-thumb" id="28">
+        <div class="sample-thumb">
+
+            <img width="290" height="163" src="/site_media/content/templates/vipids/28/example_image_1.jpg.290x163_q95.jpg" />
+            
+            <div class="chrome-title-select">Epic Smoky Titles</div>
+        </div>
+        
+        <div class="duration">24 sec.</div>
+        
+    </div>
+    
+    <div rel="11" class="vipid-thumb" id="11">
+        <div class="sample-thumb">
+
+            <img width="290" height="163" src="/site_media/content/templates/vipids/11/example_image.jpg.290x163_q95.jpg" />
+            
+            <div class="chrome-title-select">Design intro</div>
+        </div>
+        
+        <div class="duration">8 sec.</div>
+        
+    </div>
+    
+    <div rel="54" class="vipid-thumb" id="54">
+        <div class="sample-thumb">
+
+            <img width="290" height="163" src="/site_media/content/templates/vipids/54/example_image_1.jpg.290x163_q95.jpg" />
+            
+            <div class="chrome-title-select">Universal Sun</div>
+        </div>
+        
+        <div class="duration">22 sec.</div>
+        
+    </div>
+    
+    <div rel="60" class="vipid-thumb" id="60">
+        <div class="sample-thumb">
+
+            <img width="290" height="163" src="/site_media/content/templates/vipids/60/example_image_1.jpg.290x163_q95.jpg" />
+            
+            <div class="chrome-title-select">Telescope</div>
+        </div>
+        
+        <div class="duration">21 sec.</div>
+        
+    </div>
+    
+    <div rel="16" class="vipid-thumb" id="16">
+        <div class="sample-thumb">
+
+            <img width="290" height="163" src="/site_media/content/templates/vipids/16/example_image.jpg.290x163_q95.jpg" />
+            
+            <div class="chrome-title-select">facebook ID</div>
+        </div>
+        
+        <div class="duration">8 sec.</div>
+        
+    </div>
+    
+    <div rel="57" class="vipid-thumb" id="57">
+        <div class="sample-thumb">
+
+            <img width="290" height="163" src="/site_media/content/templates/vipids/57/example_image.jpg.290x163_q95.jpg" />
+            
+            <div class="chrome-title-select">Bokeh Features</div>
+        </div>
+        
+        <div class="duration">17 sec.</div>
+        
+    </div>
+    
+    <div rel="52" class="vipid-thumb" id="52">
+        <div class="sample-thumb">
+
+            <img width="290" height="163" src="/site_media/content/templates/vipids/52/example_image.jpg.290x163_q95.jpg" />
+            
+            <div class="photo-icon"></div>
+            
+            <div class="chrome-title-select">Scary Intro</div>
+        </div>
+        
+        <div class="duration">68 sec.</div>
+        
+    </div>
+    
+    <div rel="55" class="vipid-thumb" id="55">
+        <div class="sample-thumb">
+
+            <img width="290" height="163" src="/site_media/content/templates/vipids/55/example_image.jpg.290x163_q95.jpg" />
+            
+            <div class="photo-icon"></div>
+            
+            <div class="chrome-title-select">Football</div>
+        </div>
+        
+        <div class="duration">25 sec.</div>
+        
+    </div>
+    
+    <div rel="36" class="vipid-thumb" id="36">
+        <div class="sample-thumb">
+
+            <img width="290" height="163" src="/site_media/content/templates/vipids/36/example_image.jpg.290x163_q95.jpg" />
+            
+            <div class="photo-icon"></div>
+            
+            <div class="chrome-title-select"> 4G-Style TV</div>
+        </div>
+        
+        <div class="duration">22 sec.</div>
+        
+    </div>
+    
+    <div rel="42" class="vipid-thumb" id="42">
+        <div class="sample-thumb">
+
+            <img width="290" height="163" src="/site_media/content/templates/vipids/42/example_image_2.jpg.290x163_q95.jpg" />
+            
+            <div class="chrome-title-select">Promo</div>
+        </div>
+        
+        <div class="duration">13 sec.</div>
+        
+    </div>
+    
+    <div rel="39" class="vipid-thumb" id="39">
+        <div class="sample-thumb">
+
+            <img width="290" height="163" src="/site_media/content/templates/vipids/39/example_image_5.jpg.290x163_q95.jpg" />
+            
+            <div class="photo-icon"></div>
+            
+            <div class="chrome-title-select">Romantic Titles II</div>
+        </div>
+        
+        <div class="duration">24 sec.</div>
+        
+    </div>
+    
+    <div rel="10" class="vipid-thumb" id="10">
+        <div class="sample-thumb">
+
+            <img width="290" height="163" src="/site_media/content/templates/vipids/10/example_image_2.jpg.290x163_q95.jpg" />
+            
+            <div class="chrome-title-select">Homewood</div>
+        </div>
+        
+        <div class="duration">14 sec.</div>
+        
+    </div>
+    
+    <div rel="9" class="vipid-thumb" id="9">
+        <div class="sample-thumb">
+
+            <img width="290" height="163" src="/site_media/content/templates/vipids/9/example_image_1.jpg.290x163_q95.jpg" />
+            
+            <div class="chrome-title-select">Halloween</div>
+        </div>
+        
+        <div class="duration">22 sec.</div>
+        
+    </div>
+    
+    <div rel="20" class="vipid-thumb" id="20">
+        <div class="sample-thumb">
+
+            <img width="290" height="163" src="/site_media/content/templates/vipids/None/example_image_8.jpg.290x163_q95.jpg" />
+            
+            <div class="chrome-title-select">Country Christmas</div>
+        </div>
+        
+        <div class="duration">22 sec.</div>
+        
+    </div>
+    
+    <div rel="14" class="vipid-thumb" id="14">
+        <div class="sample-thumb">
+
+            <img width="290" height="163" src="/site_media/content/templates/vipids/14/example_image_1.jpg.290x163_q95.jpg" />
+            
+            <div class="chrome-title-select">Holiday cats</div>
+        </div>
+        
+        <div class="duration">17 sec.</div>
+        
+    </div>
+    
+    <div rel="24" class="vipid-thumb" id="24">
+        <div class="sample-thumb">
+
+            <img width="290" height="163" src="/site_media/content/templates/vipids/24/example_image.jpg.290x163_q95.jpg" />
+            
+            <div class="chrome-title-select">Romantic Titles</div>
+        </div>
+        
+        <div class="duration">24 sec.</div>
+        
+    </div>
+    
+    <div rel="19" class="vipid-thumb" id="19">
+        <div class="sample-thumb">
+
+            <img width="290" height="163" src="/site_media/content/templates/vipids/19/example_image.jpg.290x163_q95.jpg" />
+            
+            <div class="chrome-title-select">Christmas card</div>
+        </div>
+        
+        <div class="duration">15 sec.</div>
+        
+    </div>
+    
+    <div rel="17" class="vipid-thumb" id="17">
+        <div class="sample-thumb">
+
+            <img width="290" height="163" src="/site_media/content/templates/vipids/None/example_image_7.jpg.290x163_q95.jpg" />
+            
+            <div class="chrome-title-select">Halloween 3-D</div>
+        </div>
+        
+        <div class="duration">22 sec.</div>
+        
+    </div>
+    
 </div>
 
-<div id="register-form">
 
-<form onsubmit="return false;"  method="post" action=""><div style='display:none;'><input type='hidden' id='csrfmiddlewaretoken' name='csrfmiddlewaretoken' value='df25e90dd494dd4a7a4e531d7d9d6870' /></div>
-<p>Username</p>
-<input id="id_username" type="text" name="username" maxlength="30" />
+<div id="template-details">
+        <div id="template-details-top">
+            <p id="title"></p>
+        </div>
+        <div id="template-details-inner">
+            <div id="template-details-info-holder">
+                <div id="template-details-close"></div>
+                <div id="template-details-info">
+                    <p id="info-short"></p>
+                    <dl id="template-data">
+                        <dt>Frame rate:&nbsp;</dt><dd id="fps"></dd>
+                        <dt>Length:&nbsp;</dt><dd id="length"></dd>
+                        <dt>Resolution:&nbsp;</dt><dd>Up to 1920x1080</dd>
+                    </dl>
+                    <div id="customize">
+                        <table border="0">
+                            <tr>
+                                <td valign="top"><p>Customize:</p></td>
+                                <td valign="top">
+                                    <ul id="customize-list">
+                                        <li><img src="/site_media/static/skins/default/image-icon.png">2 images</li>
+                                        <li><img src="/site_media/static/skins/default/string-icon.png">2 text fields</li>
+                                    </ul>
+                            </td></tr>
+                        </table>
+                    </div>
+                    <br class="clear">
 
+                </div>
+                <div>
+                    <a href="" id="details-link"><div></div></a>
+                </div>
+            </div>
+            
+            <div id="template-details-player-holder" class="left"></div>
+            <br class="clear">
 
-<p>Password</p>
-<input type="password" name="password" id="id_password" />
-
-
-<div>
-<a id="fpasswd" href="/passreset/">Forgot password?</a>
-<input type="submit" class="gold-button" id="regbutton" value="Sign-In" style="border:0">
-</div>
-<br class="clear">
-
-</form>
-</div>
-
-<p id="already">Don't have an account? <a href="/accounts/register/">Register Now!</a></p>
-<p id="whatsfor">What is it for?</p>
-  
-<p id="vipidis">Vipid is a great tool for producing amazing movie intros and aninmated greeting cards that you can show off to friends, family, and clients!</p>
-
-
+            <div id="related-block">
+            <table border="0" cellpadding="0" cellspacing="0" style="margin-top:14px;margin-bottom:4px;">
+                <tr><td><img src="/site_media/static/skins/default/related-themes.png" /></td>
+                    <td width="100%"><div id="hdivisor"></div></td></tr>
+            </table>
+            </div>
+        </div>
+        <br class="clear">
+        <p id="created"></p>
+    </div>
+    
+<br><br class="clear">
 
 
 	</div>
@@ -932,6 +2624,7 @@ pass_inp.focus();
 
     </div>
     </div>
+
 
 
 
