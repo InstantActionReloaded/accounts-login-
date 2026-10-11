@@ -1,0 +1,961 @@
+    
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Vipid - Login</title>
+  <!--[if lte IE 7]><script src="/site_media/static/js/ie6/warning.js"></script><script>window.onload=function(){e("/site_media/static/js/ie6/")}</script><![endif]-->
+
+  <link rel="stylesheet" type="text/css" media="screen" href="/site_media/static/skins/default/video_scrollbar.css">
+  <link rel="stylesheet" type="text/css" media="screen" href="/site_media/static/skins/default/vipid_new.css">
+  <link rel="stylesheet" type="text/css" media="screen" href="/site_media/static/skins/default/fonts.css">   
+    
+  <script type="text/javascript">
+  //window.DEBUG = ;
+  window.DEBUG = false;
+  var media_url = "http://ivipid.com/site_media/static/skins/default";
+  </script>
+  <link type="text/css" rel="stylesheet" href="/site_media/static/skins/default/jquery-ui/ui-darkness/jquery-ui-1.8.13.custom.css">
+  <script type="text/javascript" src="/site_media/static/js/jquery-1.7.2.min.js"></script>
+  <script type="text/javascript" src="/site_media/static/js/console.log.patch.js"></script>
+  <!--<script type="text/javascript" src="/site_media/static/js/jquery.dataSelector.js"></script>-->
+  <!---->
+<!--  -->
+
+  <meta property="og:title" content="VipID" />
+  <meta property="og:description" content="The fastest way to create your own videos." />
+  
+  <link rel="shortcut icon" href="/site_media/static/skins/default/vipid_new_16.png" type="image/x-icon">
+  
+  
+  
+  <meta name="google-site-verification" content="LEkRz9OWQL5hrKj8MUR0qAIxs-wNxI6c9ld2wIDNC0M" />
+  <style type="text/css">
+body, html {
+height: 100%;
+}
+
+.main-heading {
+      font-family: "BebasRegular";
+      font-size: 24px;
+      padding-top: 28px;
+      margin-left: 10px;n
+      -moz-text-shadow:    1px 1px 1px #000;
+      -webkit-text-shadow: 1px 1px  1px #000;
+      text-shadow:         1px 1px  1px #000;
+      color: #fff;
+}
+
+.gold-link{
+font-size: 14px;
+color: gold;
+}
+
+.buttons-hint {
+      font-family: Verdana, sans-serif;
+      font-size: 11px;
+      color: #767676;
+      width: 440px;
+      margin-left: 10px;
+      margin-top: 10px;
+      -moz-text-shadow:   1px 1px 1px #000;
+      -webkit-text-shadow: 1px 1px 1px #000;
+      text-shadow:         1px 1px 1px #000;
+}
+
+#hello {
+font-family: "GothamBlackItalic";
+font-size: 14px;
+color: #c0c0c0;
+}
+
+div.caption {
+}
+
+#switchers {
+      float: right;
+      margin-top: 32px;
+      margin-right: 13px;
+}
+
+#switchers #buttons {
+      width: 182px;
+      height: 36px;
+      background: url("/site_media/static/skins/default/switchers-bg.png") no-repeat;
+      margin-left: 10px;
+      float: left;
+}
+
+#switchers .caption{
+      float: left;
+      font-family: "BebasRegular", Sans-serif;
+      font-size: 15px;
+      height: 36px;
+      line-height: 36px;
+}
+
+#switchers ul {
+      margin-left: 12px;
+
+}
+
+#switchers ul li a{
+      font-family: "FuturaCondensedMedium", sans-serif;
+      font-size: 18px;
+      float: left;
+      display: block;
+      padding: 6px 12px;
+      -moz-text-shadow:    1px 1px 1px #000;
+      -webkit-text-shadow: 1px 1px  1px #000;
+      text-shadow:         1px 1px  1px #000
+}
+
+#switchers ul li a:hover{
+      color: #fff;
+}
+
+#switchers ul li a.selected{
+      color: #f7dc46;
+      -moz-text-shadow:   0 0 12px rgba(255,144,0, 0.4);
+      -webkit-text-shadow: 0 0 12px rgba(255,144,0, 0.4);
+      text-shadow:         0 0 12px rgba(255,144,0, 0.4);
+}
+
+.chrome-title {
+font-family: "BebasRegular", Sans-serif;
+font-size: 18px;
+color: #121212;
+margin-left: 4px;
+-moz-text-shadow:    1px 1px 1px #fff;
+-webkit-text-shadow: 1px 1px  1px #fff;
+text-shadow:         1px 1px  1px #fff;
+margin-top: -2px;
+}
+
+.chrome-title-select {
+font-family: "BebasRegular", Sans-serif;
+font-size: 16px;
+color: #ececec;
+margin-left: 9px;
+margin-top: 0px;
+-moz-text-shadow:    1px 0px 0px #000;
+-webkit-text-shadow: 1px 0px  0px #000;
+text-shadow:         1px 0px  0px #000;
+}
+
+.chrome-title-myvideos {
+font-family: "BebasRegular", Sans-serif;
+font-size: 16px;
+color: #2f2f2f;
+margin-left: 9px;
+-moz-text-shadow:    1px 0px 0px #d4d4d4;
+-webkit-text-shadow: 1px 0px  0px #d4d4d4;
+text-shadow:         1px 0px  0px #d4d4d4;
+float: left;
+width: 225px;
+overflow: hidden;
+cursor: pointer;
+}
+
+
+#header-new {
+      height: 66px;
+      background:black;
+      -moz-box-shadow:    0 1px 10px 0 rgba(0,0,0,0.5);
+      -webkit-box-shadow: 0 1px 10px 0 rgba(0,0,0,0.5);
+      box-shadow:         0 1px 10px 0 rgba(0,0,0,0.5);
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+
+#header-fixed {
+      position: relative;
+      height: 60px;
+      width: 960px;
+      margin: 0 auto;
+}
+
+#header-lnav {
+      list-style-type: none;
+      float: left;
+      margin-top: 23px;
+      margin-left: 20px;
+}
+
+#header-lnav li {
+      float: left;
+      margin-left: 22px;
+      padding: 0;
+}
+
+#header-lnav li a {
+      font-size:16px;
+      color: #fff;
+      font-family: "BebasRegular", Sans-serif;
+}
+
+#header-lnav li a:hover {
+color: #ffcc00;
+}
+
+#header-lnav li.round-sep {
+      height:20px;
+      width: 4px;
+      background: url("/site_media/static/skins/default/round-sep.png") no-repeat 0 50%;
+}
+
+
+#header-rnav {
+      float:right;
+      margin: 24px 10px 0 0;
+}
+
+#header-rnav li {
+      float: left;
+}
+
+#header-rnav li a {
+      font-size:16px;
+      color: #fff;
+      font-family: "GothamBlackRegular";
+
+}
+
+#bal-top {
+font-family: "GothamBlackRegular";
+font-size: 14px;
+color: #fff;
+text-style: normal;
+}
+
+#header-rnav li a:hover {
+color: #ffcc00;
+}
+
+li.or-sep {
+      height: 20px;
+      width: 17px;
+      background: url("/site_media/static/skins/default/or-sep.png") no-repeat 0 50%;
+      margin: 0 12px;
+}
+
+
+
+
+
+#logo {
+      background: url("/site_media/static/skins/default/uipid.png") no-repeat;
+      float: left;
+      width: 148px;
+      height: 54px;
+      margin-top: 6px;
+}
+
+#logo_boomshot {
+      background: url("/site_media/static/skins/default/boomshot_logo.png") no-repeat;
+      float: left;
+      width: 148px;
+      height: 54px;
+      margin-top: 6px;
+}
+
+
+#my-videos {
+    float: right;
+    margin-top: 25px;
+    width: 110px;
+}
+
+#container {
+      width: 100%;
+      background: #333 url(/site_media/static/skins/default/bg_tile_256.png);
+      min-height:100%;
+      position:relative;
+}
+
+
+#content {
+      width: 964px;
+      margin:0 auto;
+      margin-top: 10px;
+      padding-bottom:260px;
+
+
+}
+
+#new-footer {
+      height: 260px;
+      background: url(/site_media/static/skins/default/newfooter-bg.png);
+      width: 100%;
+      position: absolute;
+      bottom:0;
+}
+
+#new-footer-inner {
+      width: 964px;
+      margin: 0 auto;
+      height: 162px;
+      padding-top: 42px;
+}
+
+#new-footer-bottom {
+      font-family: Verdana;
+      font-size: 13px;
+}
+
+#new-footer-bottom a:hover{
+color: #fff;
+}
+
+#tellafriend {
+      float: left;
+      width: 138px;
+      height: 160px;
+
+      margin-left: 10px;
+      margin-right: 25px;
+}
+
+#tellafriend img {
+      margin-right: 8px;
+}
+
+#tellafriend2 {
+width: 138px;
+height: 116px;
+background: url(/site_media/static/skins/default/tellafriend.png) no-repeat 0 0;
+}
+
+.footer-menu {
+float: left;
+margin-right: 50px;
+}
+
+.footer-menu li a {
+font-family: MyriadPro-Regular, 'Myriad Pro Regular', MyriadPro, 'Myriad Pro', Helvetica, Arial, sans-serif;
+font-size: 14px;
+color: #fff;
+padding-bottom: 3px;
+display: block;
+}
+
+.admin-stuff {
+margin-right: 20px;
+}
+.admin-stuff li a {
+font-size: 11px;
+}
+
+.footer-menu li a:hover {
+color: #ffcc00;
+}
+
+.footer-menu li.menu-header {
+      font-size: 20px;
+      color: #fff;
+      font-family: "BebasRegular", Sans-serif;
+      padding-bottom: 14px;
+}
+
+#counter-holder {
+      float: right;
+      width: 200px;
+      height: 150px;
+      margin-right: 10px;
+      background: url(/site_media/static/skins/default/footer-logo.png) no-repeat 100% 48px;
+      text-align: right;
+}
+
+#counter-holder-boomshot {
+      float: right;
+      width: 200px;
+      height: 150px;
+      margin-right: 10px;
+      background: url(/site_media/static/skins/default/footer-logo-boomshot.png) no-repeat 100% 48px;
+      text-align: right;
+}
+
+#videos-counter {
+      font-family: "GothamBlackRegular";
+      font-size: 42px;
+      margin-top: -7px;
+      -moz-text-shadow:   3px 3px 3px  rgba(0,0,0, 0.6);
+      -webkit-text-shadow:    3px 3px 3px  rgba(0,0,0, 0.6);
+      text-shadow:            3px 3px 3px  rgba(0,0,0, 0.6);
+}
+
+#new-footer-bottom {
+      height: 55px;
+      background: #202020;
+      text-align: center;
+border-top: 1px solid #2b2b2b;
+}
+
+#new-footer-bottom p, #new-footer-bottom a { 
+      color: #666;
+      font-size: 11px;
+padding-top: 20px;
+}
+
+.header-dropdown {
+      position: absolute;
+      z-index: 9999;
+      top: 60px;
+      background:black;
+      -moz-box-shadow:    0 1px 10px 0 rgba(0,0,0,0.5);
+      -webkit-box-shadow: 0 1px 10px 0 rgba(0,0,0,0.5);
+      box-shadow:         0 1px 10px 0 rgba(0,0,0,0.5);
+      padding: 20px 30px 10px 30px;
+      display: none;
+}
+
+.header-dropdown li a {
+      display: block;
+      font-size:16px;
+      color: #fff;
+      font-family: "BebasRegular", Sans-serif;
+      padding-bottom: 14px;
+}
+
+.header-dropdown li a.last {
+      color: #fd522b;
+}
+#account-dd {
+      left: 367px;
+}
+
+.gold-button {
+height: 37px;
+background: gold;
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fef455', endColorstr='#dfae01');
+background: -webkit-gradient(linear, left top, left bottom, from(#fef455), to(#dfae01));
+background: -moz-linear-gradient(top,  #fef455,  #dfae01);
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+text-align: center;
+  font-family: "GothamBlackRegular";
+font-size: 14px;
+color: #000;
+  -moz-text-shadow:    1px 1px 0 rgba(255,244,73, 0.7);
+  -webkit-text-shadow: 1px 1px  0 rgba(255,244,73, 0.7);
+  text-shadow:         1px 1px  0 rgba(255,244,73, 0.7);
+line-height: 37px;
+cursor: pointer;
+-webkit-touch-callout: none;
+-webkit-user-select: none;
+-khtml-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+user-select: none;
+}
+
+@-moz-document url-prefix() {
+.myvideo .caption-date-active {
+text-align: right;
+margin-top: 54px;
+height: 14px; }
+input[type="submit"] { 
+border: 0px;
+padding: 0px;}
+.chrome-title-select,
+.chrome-title-myvideos {
+margin-top: -2px;}
+.chrome-title {margin-top: -4px;}
+}
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+
+.social {
+margin-top: 18px;
+}}
+
+
+.social_avatar {
+      width:        32px;
+      height:       32px;
+      margin-right: 12px;
+      margin-top:   -6px;
+}
+
+#sidebar {
+    background: url("/site_media/static/skins/default/bg_tile_256.png") repeat scroll 0 0 #333333;
+    box-shadow: 0 0 5px #222222;
+    font-size: 9px;
+    line-height: normal;
+    margin: 0 0 0 -100px;
+    overflow: hidden;
+    padding: 5px;
+    position: fixed;
+    top: 200px;
+    width: 55px;
+    border: 1px solid #202020;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;    
+}
+</style>
+
+
+  <script type="text/javascript">
+    current_app =  'vipid' 
+$(function() {
+    $("#status-tools").toggle(
+	function() {
+	    $("#status-tools").css("background", "url(/site_media/static/skins/default/gear.png) 0px 0px no-repeat");
+	    $("#yt-dropdown").show();
+	},
+	function() {
+	    $("#yt-dropdown").hide();
+	    $("#status-tools").css("background", "url(/site_media/static/skins/default/gear.png) -21px 0px no-repeat");
+	}
+    );
+    
+    $(".dropdown-click").toggle(
+	function(e) {
+	    $(".dropdown").fadeIn("fast");
+	},
+	function(e) {
+	    $(".dropdown").fadeOut("fast");
+	});
+    
+    $(".dropdown a").click(function(e) {
+	e.stopPropagation();
+    });
+    
+    $(".dropdown input").click(function(e) {
+	e.stopPropagation();
+    });
+    
+    $("#account-li").toggle(
+	function(e) {
+	    $("#account-dd").show();
+	},
+	function(e) {
+	    $("#account-dd").hide();
+	}
+    );
+
+    $("#admin-li").toggle(
+	function(e) {
+	    $("#admin-dd").show();
+	},
+	function(e) {
+	    $("#admin-dd").hide();
+	}
+    );
+    
+    displayCount();
+    
+    
+});
+
+function updateCounter() {
+    if (window.not_update_counter)
+        return;
+    
+    $.get("/api/total_vipids_done/", function(nvideos) {
+    
+	var old = $("#videos-counter").attr("data-count");
+	if (old != nvideos) {
+            $("#videos-counter").attr("data-count", nvideos);
+	    displayCount();
+	}
+    });
+    
+}
+
+function displayCount() {
+    var x = $("#videos-counter").attr("data-count");
+    var formatted = x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    $("#videos-counter").text(formatted);
+}
+
+</script>
+    
+  
+	<meta property="og:title" content="VipID" />
+	<meta property="og:description" content="The fastest way to create your own videos." />
+
+  	
+
+  
+<style type="text/css">
+#polygon {
+background: url(/site_media/static/skins/default/polygon.png) no-repeat;
+width: 570px;
+height: 136px;
+margin: 0 auto;
+}
+#polygon a {
+margin-top: 64px;
+}
+
+#connect-fb, #connect-twitter, #connect-google {
+display: block;
+margin-left: 23px;
+width: 160px;
+height: 37px;
+float: left;
+}
+
+#connect-fb {
+background: url(/site_media/static/skins/default/connect_fb_small.png) no-repeat;
+}
+
+#connect-twitter {
+background: url(/site_media/static/skins/default/connect_twitter_small.png) no-repeat;
+}
+
+#connect-google {
+background: url(/site_media/static/skins/default/connect_google_small.png) no-repeat;
+}
+
+#regbutton {
+height: 44px;
+margin-top: 20px;
+float: right;
+margin-right: 50px;
+font-family: 'myriad_probold';
+font-size: 24px;
+line-height: 40px;
+padding-left: 20px;
+padding-right: 20px;
+}
+
+#signin-vipid {
+width: 308px;
+height: 54px;
+margin: 60px auto 10px auto;
+background: url(/site_media/static/skins/default/signin-vipid.png) no-repeat;
+}
+
+#signin-boomshot {
+width: 432px;
+height: 60px;
+margin: 60px auto 10px auto;
+background: url(/site_media/static/skins/default/signin-boomshot.png) no-repeat;
+}
+
+#register-form {
+width: 522px;
+background: rgba(0,0,0,0.4);
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    -webkit-box-shadow: inset 0px 0px 5px rgba(0,0,0,0.4);
+    -moz-box-shadow: inset 0px 0px 5px rgba(0,0,0,0.4);
+    box-shadow:  inset 0px 0px 5px  rgba(0,0,0,0.4);
+margin: 19px auto 0 auto;
+padding-left: 48px;
+padding-top: 24px;
+padding-bottom: 20px;
+}
+
+#register-form {
+font-family:  'Myriad Pro', Helvetica, Arial, sans-serif;
+font-size: 18px;
+}
+
+#already {
+font-family:  'Myriad Pro Semibold', Helvetica, Arial, sans-serif;
+font-size: 18px;
+text-align: center;
+margin-top: 24px;
+margin-bottom: 80px;
+}
+
+
+
+#already a{
+font-family:  'Myriad Pro Semibold', Helvetica, Arial, sans-serif;
+font-size: 18px;
+text-decoration: underline;
+color: #dbd22e;
+}
+
+#fpasswd {
+font-family:  'Myriad Pro Semibold', Helvetica, Arial, sans-serif;
+font-size: 18px;
+text-decoration: underline;
+color: #dbd22e;
+float: left;
+margin-top: 30px;
+}
+
+#whatsfor {
+font-family:  'Myriad Pro', Helvetica, Arial, sans-serif;
+font-size: 24px;
+text-align: center;
+}
+
+#vipidis {
+font-family:  'Myriad Pro', Helvetica, Arial, sans-serif;
+font-size: 14px;
+text-align: center;
+width: 550px;
+margin: 0 auto;
+color: #717171;
+margin-top: 20px;
+margin-bottom: 20px;
+}
+
+
+form p {
+font-family:  'Myriad Pro', Helvetica, Arial, sans-serif;
+font-size: 16px;
+color: #818181;
+margin: 8px 0 6px 6px;
+}
+
+form input[type=text], form input[type=password] { 
+font-family:  'Myriad Pro', Helvetica, Arial, sans-serif;
+height: 45px;
+width: 467px;
+border-radius: 5px;
+border-left: 1px solid #212121;
+border-right: 1px solid #1e1e1e;
+border-bottom: 1px solid #343434;
+border-top: 1px solid #000;
+color: #fff;
+font-size: 24px;
+background: #070707;
+-moz-box-shadow:    0 1px 0 rgba(255, 255, 255, 0.15);
+-webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.15);
+box-shadow:         0 1px 0 rgba(255, 255, 255, 0.15);
+}
+
+form input.faulty {
+color: #FF4040;
+font-style: italic;
+}
+
+#terms {
+font-family:  'Myriad Pro, Helvetica, Arial, sans-serif;
+font-size: 12px;
+color: #d3dadc;
+margin-top: 30px;
+}
+
+.errorlist {
+font-size: 14px;
+color: #ff6666;
+margin-top: 6px;
+margin-left: 2px;
+}
+
+#terms input {
+margin-left: -6px;
+}
+
+#terms a{
+font-family:  'Myriad Pro', Helvetica, Arial, sans-serif;
+font-size: 14px;
+text-decoration: underline;
+color: #dbd22e;
+}
+
+
+input[type=image] {
+float: right;
+margin-right: 50px;
+margin-top: 18px;
+}
+
+
+</style>
+<script type="text/javascript">
+
+$(function() {
+$(".faulty").click(function(){
+$(this).val('');
+$(this).removeClass('faulty');
+var name = $(this).attr("name");
+if (name=="password1" || name=="password2") {
+var pass_inp = $("<input/>",{type:"password", "name":name});
+$(this).replaceWith(pass_inp);
+pass_inp.focus();
+}
+});
+});
+</script>
+
+
+</head>
+<body>
+  <div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=128439573889394";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+  
+	
+    <div id="container">
+	<div id="graysand">
+    <div id="header-new">
+	
+	<div id="header-fixed">
+              
+	    <a href="/"><div id="logo"></div></a>
+            
+            
+	    <ul id="header-lnav">
+		<li class="themes"><a href="/themes/">THEMES</a></li>
+		<li class="round-sep"></li>
+		<li class="my-videos"><a href="/">MY VIDEOS</a></li>
+		
+	    </ul>
+
+	    <ul id="header-rnav">
+		
+		<li><a href="/accounts/login/">SIGN IN</a></li>
+		<li class="or-sep"></li>
+		<li><a href="/accounts/register/">SIGN UP</a></li>
+		
+	    </ul>
+	<ul class="header-dropdown" id="account-dd">          
+	    
+	    <li><a href="/">MY PROFILE</a></li>
+	    <li><a href="/packages/">BUY PACKAGE</a></li>            
+	    <li><a href="/">MY REFERRALS</a></li>            
+	    <li><a href="/accounts/logout/" class="last">SIGN OUT</a></li>
+        </ul>
+	</div>
+
+    
+    </div>
+	<div id="content">
+            <div id="sidebar">
+              
+              <div style="margin: 4px">
+                <div class="fb-like" data-href="http://www.facebook.com/ivipid" data-send="false" data-layout="box_count" data-width="450" data-show-faces="true" data-colorscheme="dark" data-font="lucida grande"></div>
+              </div>
+              <div style="margin-top: 8px">
+                <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://ivipid.com" data-text="Create your own personal video intros, greeting cards and much more with ivipid.com !" data-count="vertical"></a>
+              </div>
+            </div>
+            
+
+	    
+
+    
+<div id="signin-vipid"></div>
+
+    
+<div id="polygon">
+<a href="/accounts/login/" id="connect-fb"></a>
+<a href="/accounts/login/" id="connect-google"></a>
+<a href="/accounts/login/" id="connect-twitter"></a>
+</div>
+
+<div id="register-form">
+
+<form onsubmit="return false;"  method="post" action=""><div style='display:none;'><input type='hidden' id='csrfmiddlewaretoken' name='csrfmiddlewaretoken' value='df25e90dd494dd4a7a4e531d7d9d6870' /></div>
+<p>Username</p>
+<input id="id_username" type="text" name="username" maxlength="30" />
+
+
+<p>Password</p>
+<input type="password" name="password" id="id_password" />
+
+
+<div>
+<a id="fpasswd" href="/passreset/">Forgot password?</a>
+<input type="submit" class="gold-button" id="regbutton" value="Sign-In" style="border:0">
+</div>
+<br class="clear">
+
+</form>
+</div>
+
+<p id="already">Don't have an account? <a href="/accounts/register/">Register Now!</a></p>
+<p id="whatsfor">What is it for?</p>
+  
+<p id="vipidis">Vipid is a great tool for producing amazing movie intros and aninmated greeting cards that you can show off to friends, family, and clients!</p>
+
+
+
+
+	</div>
+	<div id="new-footer">
+	<div id="new-footer-inner">
+	    <div id="tellafriend">
+                
+		<a href="https://www.facebook.com/ivipid"><img src="/site_media/static/skins/default/facebook32.png"></a>
+		<a href="https://twitter.com/ivipid"><img src="/site_media/static/skins/default/twitter32.png"></a>
+		<a href="https://youtube.com/user/ivipid"><img src="/site_media/static/skins/default/youtube32.png"></a>
+                
+                
+		<a href="/"><div id="tellafriend2"></div></a>
+            </div>
+	    <ul class="footer-menu">
+		<li class="menu-header">Product</li>
+		<li><a href="/about/">About</a></li>
+		<li><a href="/packages/">Pricing</a></li>
+		<li><a href="/news/">News</a></li>
+	    </ul>
+
+	    <ul class="footer-menu">
+		<li class="menu-header">Vipid For</li>
+		<li><a href="/samples/">Enthusiasts</a></li>
+		<li><a href="/samples/">Businesses</a></li>
+	    </ul>
+
+	    <ul class="footer-menu">
+		<li class="menu-header">Support</li>
+		<li><a href="/faq/">FAQ</a></li>
+		<li><a href="/contacts/">Contacts</a></li>
+		<li><a href="/privacy-policy/">Privacy Policy</a></li>
+		<li><a href="/terms-of-service/">Terms of Service</a></li>
+                                
+		<li><a href="/passreset/">Forgot Password?</a></li>
+                
+	    </ul>
+	    <div id="counter-holder">
+                
+		<div id="videos-counter" data-count="965946"></div>
+                
+                
+	    </div>
+	</div>
+        
+	<div id="new-footer-bottom"><p><a href="/terms-of-service/">Terms of Service</a> | <a href="/privacy-policy/">Privacy Policy</a> | <a href="https://www.youtube.com/user/ivipid">Youtube</a> | <a href="https://twitter.com/ivipid">Twitter</a> | <a href="https://www.facebook.com/ivipid">Facebook</a></p><div>
+	
+        
+        
+        </div>
+
+    </div>
+    </div>
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+  
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-24504828-1']);
+  _gaq.push(['_setDomainName', '.ivipid.com']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+  
+  
+</script>
+
+
+</body>
+</html>
